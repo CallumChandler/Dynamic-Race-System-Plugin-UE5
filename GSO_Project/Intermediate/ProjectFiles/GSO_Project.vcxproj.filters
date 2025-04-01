@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\GSO_Project.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GSO_Project.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\GSO_ProjectEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\GSO_Project">
+      <UniqueIdentifier>{F1D4B605-4358-3CE0-ADF8-9FE56BDAA35C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GSO_Project\GSO_Project.Build.cs">
+      <Filter>Source\GSO_Project</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_Project.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_Project.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectGameMode.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectGameMode.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectOffroadCar.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectOffroadCar.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectOffroadWheelFront.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectOffroadWheelFront.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectOffroadWheelRear.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectOffroadWheelRear.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectPawn.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectPawn.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectPlayerController.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectPlayerController.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectSportsCar.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectSportsCar.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectSportsWheelFront.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectSportsWheelFront.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectSportsWheelRear.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectSportsWheelRear.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectUI.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectUI.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectWheelFront.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectWheelFront.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GSO_Project\GSO_ProjectWheelRear.cpp">
+      <Filter>Source\GSO_Project</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GSO_Project\GSO_ProjectWheelRear.h">
+      <Filter>Source\GSO_Project</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
