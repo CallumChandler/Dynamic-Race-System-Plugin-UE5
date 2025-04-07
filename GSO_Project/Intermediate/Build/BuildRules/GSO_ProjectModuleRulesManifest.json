@@ -1,6 +1,7 @@
 {
 	"SourceFiles": [
 		"D:\\0-FinalYearProject\\Project\\GearShiftOverdrive\\GSO_Project\\Source\\GSO_Project\\GSO_Project.Build.cs",
+		"D:\\0-FinalYearProject\\Project\\GearShiftOverdrive\\GSO_Project\\Plugins\\DynamicRaceSystem\\Source\\DynamicRaceSystem\\DynamicRaceSystem.Build.cs",
 		"D:\\0-FinalYearProject\\Project\\GearShiftOverdrive\\GSO_Project\\Source\\GSO_Project.Target.cs",
 		"D:\\0-FinalYearProject\\Project\\GearShiftOverdrive\\GSO_Project\\Source\\GSO_ProjectEditor.Target.cs"
 	],

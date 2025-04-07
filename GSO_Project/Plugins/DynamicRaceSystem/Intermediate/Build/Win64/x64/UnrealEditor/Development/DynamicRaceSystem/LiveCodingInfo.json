@@ -1,0 +1,11 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.DynamicRaceSystem.cpp.obj": [
+			"DRS_Broadcaster.cpp.obj",
+			"DRS_Processor.cpp.obj",
+			"DRS_Reciever.cpp.obj",
+			"DynamicRaceSystem.cpp.obj"
+		]
+	}
+}

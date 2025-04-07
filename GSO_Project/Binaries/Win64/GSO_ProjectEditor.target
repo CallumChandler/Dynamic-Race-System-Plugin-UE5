@@ -34,6 +34,18 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/DynamicRaceSystem/Binaries/Win64/UnrealEditor-DynamicRaceSystem.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/DynamicRaceSystem/Binaries/Win64/UnrealEditor-DynamicRaceSystem.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/DynamicRaceSystem/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/AgentInterface.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3469,6 +3481,10 @@
 	"RuntimeDependencies": [
 		{
 			"Path": "$(ProjectDir)/GSO_Project.uproject",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/DynamicRaceSystem/DynamicRaceSystem.uplugin",
 			"Type": "UFS"
 		},
 		{
