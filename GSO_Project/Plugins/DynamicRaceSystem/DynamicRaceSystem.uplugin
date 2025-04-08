@@ -19,21 +19,6 @@
 			"Name": "DynamicRaceSystem",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "DRS_Broadcaster",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "DRS_Reciever",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "DRS_Processor",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
 		}
 	]
 }
