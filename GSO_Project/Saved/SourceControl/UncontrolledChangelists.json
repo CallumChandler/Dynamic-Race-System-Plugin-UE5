@@ -1,0 +1,12 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/0-FinalYearProject/Project/GearShiftOverdrive/GSO_Project/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_Pawn.uasset"
+			]
+		}
+	]
+}

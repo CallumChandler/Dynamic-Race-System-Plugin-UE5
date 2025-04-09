@@ -3,10 +3,12 @@
 
 #include "DRS_Reciever.h"
 
-DRS_Reciever::DRS_Reciever()
+// Sets default values for this component's properties
+UDRS_Reciever::UDRS_Reciever()
 {
+	PrimaryComponentTick.bCanEverTick = false;
+
+	
 }
 
-DRS_Reciever::~DRS_Reciever()
-{
-}
+

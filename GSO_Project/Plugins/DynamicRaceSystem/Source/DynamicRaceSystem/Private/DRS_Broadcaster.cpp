@@ -3,10 +3,24 @@
 
 #include "DRS_Broadcaster.h"
 
-DRS_Broadcaster::DRS_Broadcaster()
+// Sets default values for this component's properties
+UDRS_Broadcaster::UDRS_Broadcaster()
 {
+	PrimaryComponentTick.bCanEverTick = false;
+
+	RacerSpeed = 0;
+	RacerPosition = 1;
 }
 
-DRS_Broadcaster::~DRS_Broadcaster()
+void UDRS_Broadcaster::SetBroadcaster(int speed, int position)
 {
+	RacerSpeed = speed;
+	RacerPosition = position;
 }
+
+void UDRS_Broadcaster::GetBroadcaster(int& speed, int& position)
+{
+	speed = RacerSpeed;
+	position = RacerPosition;
+}
+

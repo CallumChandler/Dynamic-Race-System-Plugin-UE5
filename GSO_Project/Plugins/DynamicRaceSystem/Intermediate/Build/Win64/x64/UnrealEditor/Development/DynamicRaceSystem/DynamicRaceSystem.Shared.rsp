@@ -257,6 +257,7 @@
 /I "Developer\PhysicsUtilities\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\WidgetRegistration\UHT"
 /I "Developer\WidgetRegistration\Public"
+/I "D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Plugins\DynamicRaceSystem\Intermediate\Build\Win64\UnrealEditor\Inc\DynamicRaceSystem\UHT"
 /I "D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Plugins\DynamicRaceSystem\Source"
 /I "D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Plugins\DynamicRaceSystem\Source\DynamicRaceSystem\Public"
 /external:W0

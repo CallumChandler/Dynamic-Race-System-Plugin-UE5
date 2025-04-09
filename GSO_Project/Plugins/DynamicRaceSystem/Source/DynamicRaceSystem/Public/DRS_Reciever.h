@@ -3,13 +3,17 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/ActorComponent.h"
+#include "DRS_Reciever.generated.h"
 
-/**
- * 
- */
-class DYNAMICRACESYSTEM_API DRS_Reciever
+
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+class DYNAMICRACESYSTEM_API UDRS_Reciever : public UActorComponent
 {
-public:
-	DRS_Reciever();
-	~DRS_Reciever();
+	GENERATED_BODY()
+
+public:	
+	// Sets default values for this component's properties
+	UDRS_Reciever();
+
 };

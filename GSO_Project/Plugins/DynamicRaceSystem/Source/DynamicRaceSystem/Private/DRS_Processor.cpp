@@ -3,10 +3,31 @@
 
 #include "DRS_Processor.h"
 
-DRS_Processor::DRS_Processor()
+// Sets default values for this component's properties
+UDRS_Processor::UDRS_Processor()
 {
+	PrimaryComponentTick.bCanEverTick = false;
+
+	// ...
 }
 
-DRS_Processor::~DRS_Processor()
+void UDRS_Processor::BeginPlay()
 {
+
+
+	//Set length of SpeedArray accordingly
+	SpeedArray.SetNum(BroadcastActors.Num());
 }
+
+void UDRS_Processor::GetRacersSpeeds()
+{
+	int speed = 0;
+	int position = 1; //1 -> Number of Racers
+
+	for (int i = 0; i < SpeedArray.Num(); i++)
+	{
+		//Add Speed value to position in Array according to the Racers Position
+		SpeedArray.Insert(speed, (position - 1));
+	}
+}
+
