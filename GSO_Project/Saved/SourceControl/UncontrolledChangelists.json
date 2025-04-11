@@ -5,7 +5,9 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"D:/0-FinalYearProject/Project/GearShiftOverdrive/GSO_Project/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_Pawn.uasset"
+				"D:/0-FinalYearProject/Project/GearShiftOverdrive/GSO_Project/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_Pawn.uasset",
+				"D:/0-FinalYearProject/Project/GearShiftOverdrive/GSO_Project/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleOffroadExampleMap/4/S5/MPA7VQSYQR3D9NQ57A4RO7.uasset",
+				"D:/0-FinalYearProject/Project/GearShiftOverdrive/GSO_Project/Content/VehicleTemplate/Maps/VehicleOffroadExampleMap.umap"
 			]
 		}
 	]

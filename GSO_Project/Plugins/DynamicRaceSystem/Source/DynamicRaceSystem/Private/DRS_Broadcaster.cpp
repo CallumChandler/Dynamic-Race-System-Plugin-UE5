@@ -12,15 +12,23 @@ UDRS_Broadcaster::UDRS_Broadcaster()
 	RacerPosition = 1;
 }
 
-void UDRS_Broadcaster::SetBroadcaster(int speed, int position)
+void UDRS_Broadcaster::SetSpeed(int speed)
 {
 	RacerSpeed = speed;
+}
+
+void UDRS_Broadcaster::SetPosition(int position)
+{
 	RacerPosition = position;
 }
 
-void UDRS_Broadcaster::GetBroadcaster(int& speed, int& position)
+void UDRS_Broadcaster::GetSpeed(int speed)
 {
 	speed = RacerSpeed;
+}
+
+void UDRS_Broadcaster::GetPosition(int position)
+{
 	position = RacerPosition;
 }
 

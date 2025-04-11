@@ -6,6 +6,10 @@
         "PCH": "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\intermediate\\build\\win64\\x64\\gso_projecteditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
         "Includes": [
             "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\dynamicracesystem\\definitions.dynamicracesystem.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\unrealeditor\\inc\\dynamicracesystem\\uht\\drs_reciever.gen.cpp",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\source\\dynamicracesystem\\public\\drs_reciever.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\unrealeditor\\inc\\dynamicracesystem\\uht\\drs_reciever.generated.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\source\\dynamicracesystem\\private\\drs_reciever.cpp",
             "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\source\\dynamicracesystem\\private\\dynamicracesystem.cpp",
             "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\source\\dynamicracesystem\\public\\dynamicracesystem.h"
         ],

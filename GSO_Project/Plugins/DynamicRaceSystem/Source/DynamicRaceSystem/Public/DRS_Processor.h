@@ -22,13 +22,21 @@ protected:
 
 private:
 	//All Broadcasters in one Array
-	TArray<UDRS_Broadcaster*> BrCompArray;
+	TArray<UDRS_Broadcaster*> BrActorArray;
 
-	//Processor's Array of All Racers Speeds (Index = Position)
-	TArray<int> SpeedArray;
+	//Update SpeedArray
+	TArray<int> GetRacersSpeeds();
+
+	//Formula Function/s
+	int ProcessDefault(TArray<int> RaceSpeeds);
 
 public:
-	//Update SpeedArray
+	//Overall 'Level' of the Racers (1->3)
+	UPROPERTY(BlueprintReadOnly, Category = "DRS");
+	int RaceLevel = 1;
+
+	//Calls for the ACs to be updated, if they need to be
 	UFUNCTION(BlueprintCallable, Category = "DRS")
-	void GetRacersSpeeds();
+	void UpdateAdaptiveComps();
+
 };

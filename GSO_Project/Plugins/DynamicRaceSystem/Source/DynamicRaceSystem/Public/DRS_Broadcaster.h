@@ -24,9 +24,15 @@ private:
 public:
 	//Get/Set Broadcaster Values
 	UFUNCTION(BlueprintCallable, Category = "DRS")
-	void SetBroadcaster(int position, int speed);
+	void SetSpeed(int speed);
 
 	UFUNCTION(BlueprintCallable, Category = "DRS")
-	void GetBroadcaster(int& position, int& speed);
+	void SetPosition(int position);
+
+	UFUNCTION(BlueprintCallable, Category = "DRS")
+	void GetSpeed(int speed);
+
+	UFUNCTION(BlueprintCallable, Category = "DRS")
+	void GetPosition(int position);
 
 };
