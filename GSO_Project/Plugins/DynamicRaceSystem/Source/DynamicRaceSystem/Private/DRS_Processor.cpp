@@ -29,7 +29,8 @@ void UDRS_Processor::UpdateAdaptiveComps()
 	if (!BrActorArray.IsEmpty()) //Check to ensure there are Brodcasters in the current Level
 	{
 		//Gets & converts Speed/s to a Level
-		int TempLevel = ProcessDefault(GetRacersSpeeds());
+		int value = CalcMean(GetRacersSpeeds());
+		int TempLevel = ProduceRaceLevel(value);
 
 		//Updates RaceLevel if different
 		if (RaceLevel != TempLevel)
@@ -42,19 +43,19 @@ void UDRS_Processor::UpdateAdaptiveComps()
 	}
 }
 
-TArray<int> UDRS_Processor::GetRacersSpeeds()
+TArray<int>& UDRS_Processor::GetRacersSpeeds()
 {
 	//Makes and fills an Array accord to length of BrActorArray
 	TArray<int> SpeedArray;
-	SpeedArray.Init(0, BrActorArray.Num());
+	SpeedArray.Init(0, (BrActorArray.Num() - 1));
 
 	int speed = 0;
 	int position = 1;
 
-	for (int i = 0; i < BrActorArray.Num(); i++)
+	for (int i = 0; i <= (BrActorArray.Num() - 1); i++)
 	{
-		BrActorArray[i]->GetSpeed(speed);
-		BrActorArray[i]->GetPosition(position);
+		speed = BrActorArray[i]->GetSpeed();
+		position = BrActorArray[i]->GetPosition();
 
 		//Add Speed value to position in Array according to the Racers Position
 		//This, practically speaking, lets a 1D Array hold the data of a 2D Array
@@ -64,7 +65,7 @@ TArray<int> UDRS_Processor::GetRacersSpeeds()
 	return SpeedArray;
 }
 
-int UDRS_Processor::ProcessDefault(TArray<int> RaceSpeeds)
+int UDRS_Processor::CalcMean(TArray<int>& RaceSpeeds)
 {
 	int value = 0;
 
@@ -73,12 +74,35 @@ int UDRS_Processor::ProcessDefault(TArray<int> RaceSpeeds)
 	{
 		value += RaceSpeeds[i];
 	}
-	
-	//Gets Mean
-	value = value / RaceSpeeds.Num();
 
+	//Returns Mean
+	return value / RaceSpeeds.Num();
+}
+
+int UDRS_Processor::ProduceRaceLevel(int val)
+{
 	//Returns value accordint to linear conversion 0->180 => 1->3, rounded up
-	return FMath::Clamp(FMath::DivideAndRoundUp(value, 60), 1, 3);
+	return FMath::Clamp(FMath::DivideAndRoundUp(val, 60), 1, 3);
+}
+
+int UDRS_Processor::ProduceRaceLevelAdjustable(int val, int FirstCap, int SecondCap)
+{
+	if (val <= FirstCap)
+	{
+		return 1;
+	}
+	else if (val <= SecondCap)
+	{
+		return 2;
+	}
+	else if(val > SecondCap)
+	{
+		return 3;
+	}
+	else
+	{
+		return 1;
+	}
 }
 
 

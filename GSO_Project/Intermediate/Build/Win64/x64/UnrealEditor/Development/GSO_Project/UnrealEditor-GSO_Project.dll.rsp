@@ -70,6 +70,7 @@
 "..\Plugins\EnhancedInput\Intermediate\Build\Win64\x64\UnrealEditor\Development\EnhancedInput\UnrealEditor-EnhancedInput.lib"
 "..\Plugins\Experimental\ChaosVehiclesPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ChaosVehicles\UnrealEditor-ChaosVehicles.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\PhysicsCore\UnrealEditor-PhysicsCore.lib"
+"D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Plugins\DynamicRaceSystem\Intermediate\Build\Win64\x64\UnrealEditor\Development\DynamicRaceSystem\UnrealEditor-DynamicRaceSystem.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"

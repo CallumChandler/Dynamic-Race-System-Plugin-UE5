@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\intermediate\\build\\win64\\unrealeditor\\inc\\gso_project\\uht\\gso_projectpawn.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\intermediate\\build\\win64\\x64\\gso_projecteditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
+        "Includes": [
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gso_project\\definitions.gso_project.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\source\\gso_project\\gso_projectpawn.h",
+            "d:\\ue_5.3\\engine\\plugins\\experimental\\chaosvehiclesplugin\\source\\chaosvehicles\\public\\wheeledvehiclepawn.h",
+            "d:\\ue_5.3\\engine\\plugins\\experimental\\chaosvehiclesplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\chaosvehicles\\uht\\wheeledvehiclepawn.generated.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\intermediate\\build\\win64\\unrealeditor\\inc\\gso_project\\uht\\gso_projectpawn.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -30,9 +30,9 @@ public:
 	void SetPosition(int position);
 
 	UFUNCTION(BlueprintCallable, Category = "DRS")
-	void GetSpeed(int speed);
+	int GetSpeed();
 
 	UFUNCTION(BlueprintCallable, Category = "DRS")
-	void GetPosition(int position);
+	int GetPosition();
 
 };

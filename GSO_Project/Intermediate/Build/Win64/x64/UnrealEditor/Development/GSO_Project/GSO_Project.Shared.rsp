@@ -267,6 +267,9 @@
 /I "Runtime\Experimental\ChaosVehicles\ChaosVehiclesCore\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\ChaosVehiclesEngine\UHT"
 /I "Runtime\Experimental\ChaosVehicles\ChaosVehiclesEngine\Public"
+/I "D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Plugins\DynamicRaceSystem\Intermediate\Build\Win64\UnrealEditor\Inc\DynamicRaceSystem\UHT"
+/I "D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Plugins\DynamicRaceSystem\Source"
+/I "D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Plugins\DynamicRaceSystem\Source\DynamicRaceSystem\Public"
 /external:W0
 /external:I "ThirdParty\mimalloc\include"
 /external:I "ThirdParty\LibTiff\Source\Win64"

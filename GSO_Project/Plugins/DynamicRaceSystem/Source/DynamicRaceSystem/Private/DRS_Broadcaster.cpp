@@ -22,13 +22,13 @@ void UDRS_Broadcaster::SetPosition(int position)
 	RacerPosition = position;
 }
 
-void UDRS_Broadcaster::GetSpeed(int speed)
+int UDRS_Broadcaster::GetSpeed()
 {
-	speed = RacerSpeed;
+	return RacerSpeed;
 }
 
-void UDRS_Broadcaster::GetPosition(int position)
+int UDRS_Broadcaster::GetPosition()
 {
-	position = RacerPosition;
+	return RacerPosition;
 }
 

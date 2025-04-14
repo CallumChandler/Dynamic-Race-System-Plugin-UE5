@@ -25,10 +25,13 @@ private:
 	TArray<UDRS_Broadcaster*> BrActorArray;
 
 	//Update SpeedArray
-	TArray<int> GetRacersSpeeds();
+	TArray<int>& GetRacersSpeeds();
 
-	//Formula Function/s
-	int ProcessDefault(TArray<int> RaceSpeeds);
+	//Formula Function/s, Calc gives the value and Produce turns it into the RaceLevel
+	static int CalcMean(TArray<int>& RaceSpeeds);
+
+	static int ProduceRaceLevel(int val);
+	static int ProduceRaceLevelAdjustable(int val, int FirstCap, int SecondCap);
 
 public:
 	//Overall 'Level' of the Racers (1->3)

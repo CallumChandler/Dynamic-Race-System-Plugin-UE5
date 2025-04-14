@@ -16,18 +16,16 @@ void EmptyLinkFunctionForGeneratedCodeDRS_Broadcaster() {}
 // End Cross Module References
 	DEFINE_FUNCTION(UDRS_Broadcaster::execGetPosition)
 	{
-		P_GET_PROPERTY(FIntProperty,Z_Param_position);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->GetPosition(Z_Param_position);
+		*(int32*)Z_Param__Result=P_THIS->GetPosition();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(UDRS_Broadcaster::execGetSpeed)
 	{
-		P_GET_PROPERTY(FIntProperty,Z_Param_speed);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->GetSpeed(Z_Param_speed);
+		*(int32*)Z_Param__Result=P_THIS->GetSpeed();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(UDRS_Broadcaster::execSetPosition)
@@ -61,18 +59,18 @@ void EmptyLinkFunctionForGeneratedCodeDRS_Broadcaster() {}
 	{
 		struct DRS_Broadcaster_eventGetPosition_Parms
 		{
-			int32 position;
+			int32 ReturnValue;
 		};
-		static const UECodeGen_Private::FIntPropertyParams NewProp_position;
+		static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UDRS_Broadcaster_GetPosition_Statics::NewProp_position = { "position", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DRS_Broadcaster_eventGetPosition_Parms, position), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UDRS_Broadcaster_GetPosition_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DRS_Broadcaster_eventGetPosition_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDRS_Broadcaster_GetPosition_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDRS_Broadcaster_GetPosition_Statics::NewProp_position,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDRS_Broadcaster_GetPosition_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDRS_Broadcaster_GetPosition_Statics::Function_MetaDataParams[] = {
@@ -96,18 +94,18 @@ void EmptyLinkFunctionForGeneratedCodeDRS_Broadcaster() {}
 	{
 		struct DRS_Broadcaster_eventGetSpeed_Parms
 		{
-			int32 speed;
+			int32 ReturnValue;
 		};
-		static const UECodeGen_Private::FIntPropertyParams NewProp_speed;
+		static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UDRS_Broadcaster_GetSpeed_Statics::NewProp_speed = { "speed", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DRS_Broadcaster_eventGetSpeed_Parms, speed), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UDRS_Broadcaster_GetSpeed_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DRS_Broadcaster_eventGetSpeed_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDRS_Broadcaster_GetSpeed_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDRS_Broadcaster_GetSpeed_Statics::NewProp_speed,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDRS_Broadcaster_GetSpeed_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDRS_Broadcaster_GetSpeed_Statics::Function_MetaDataParams[] = {
@@ -224,8 +222,8 @@ void EmptyLinkFunctionForGeneratedCodeDRS_Broadcaster() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UDRS_Broadcaster_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UDRS_Broadcaster_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UDRS_Broadcaster_GetPosition, "GetPosition" }, // 3206255275
-		{ &Z_Construct_UFunction_UDRS_Broadcaster_GetSpeed, "GetSpeed" }, // 2744877922
+		{ &Z_Construct_UFunction_UDRS_Broadcaster_GetPosition, "GetPosition" }, // 3525104520
+		{ &Z_Construct_UFunction_UDRS_Broadcaster_GetSpeed, "GetSpeed" }, // 918969077
 		{ &Z_Construct_UFunction_UDRS_Broadcaster_SetPosition, "SetPosition" }, // 579823127
 		{ &Z_Construct_UFunction_UDRS_Broadcaster_SetSpeed, "SetSpeed" }, // 1970958202
 	};
@@ -275,9 +273,9 @@ void EmptyLinkFunctionForGeneratedCodeDRS_Broadcaster() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_0_FinalYearProject_Project_GearShiftOverdrive_GSO_Project_Plugins_DynamicRaceSystem_Source_DynamicRaceSystem_Public_DRS_Broadcaster_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UDRS_Broadcaster, UDRS_Broadcaster::StaticClass, TEXT("UDRS_Broadcaster"), &Z_Registration_Info_UClass_UDRS_Broadcaster, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDRS_Broadcaster), 58513352U) },
+		{ Z_Construct_UClass_UDRS_Broadcaster, UDRS_Broadcaster::StaticClass, TEXT("UDRS_Broadcaster"), &Z_Registration_Info_UClass_UDRS_Broadcaster, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDRS_Broadcaster), 1262151443U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_0_FinalYearProject_Project_GearShiftOverdrive_GSO_Project_Plugins_DynamicRaceSystem_Source_DynamicRaceSystem_Public_DRS_Broadcaster_h_455793646(TEXT("/Script/DynamicRaceSystem"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_0_FinalYearProject_Project_GearShiftOverdrive_GSO_Project_Plugins_DynamicRaceSystem_Source_DynamicRaceSystem_Public_DRS_Broadcaster_h_3830539632(TEXT("/Script/DynamicRaceSystem"),
 		Z_CompiledInDeferFile_FID_0_FinalYearProject_Project_GearShiftOverdrive_GSO_Project_Plugins_DynamicRaceSystem_Source_DynamicRaceSystem_Public_DRS_Broadcaster_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_0_FinalYearProject_Project_GearShiftOverdrive_GSO_Project_Plugins_DynamicRaceSystem_Source_DynamicRaceSystem_Public_DRS_Broadcaster_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

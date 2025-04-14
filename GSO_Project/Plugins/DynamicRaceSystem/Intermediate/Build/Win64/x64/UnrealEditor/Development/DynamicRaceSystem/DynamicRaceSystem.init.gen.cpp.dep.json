@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\unrealeditor\\inc\\dynamicracesystem\\uht\\dynamicracesystem.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\intermediate\\build\\win64\\x64\\gso_projecteditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\dynamicracesystem\\definitions.dynamicracesystem.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
