@@ -4,8 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "GameFramework/PlayerState.h"
 #include "DRS_Reciever.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChangeRaceSpeed, int, RaceLevel);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class DYNAMICRACESYSTEM_API UDRS_Reciever : public UActorComponent
@@ -15,5 +17,12 @@ class DYNAMICRACESYSTEM_API UDRS_Reciever : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UDRS_Reciever();
+	
+	//Updates Recievers
+	UPROPERTY(BlueprintAssignable)
+	FChangeRaceSpeed OnSpeedChangeDelegate;
 
+	//Event that runs when RaceLevel updates
+	UFUNCTION(BlueprintCallable, Category = "DRS")
+	void OnRaceSpeedChange(int NewRaceLevel);
 };

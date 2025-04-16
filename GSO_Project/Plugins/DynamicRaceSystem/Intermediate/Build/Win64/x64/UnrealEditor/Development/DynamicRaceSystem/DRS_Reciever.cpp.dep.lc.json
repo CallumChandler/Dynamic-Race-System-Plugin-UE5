@@ -7,6 +7,8 @@
         "Includes": [
             "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\dynamicracesystem\\definitions.dynamicracesystem.h",
             "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\source\\dynamicracesystem\\public\\drs_reciever.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\playerstate.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\playerstate.generated.h",
             "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\unrealeditor\\inc\\dynamicracesystem\\uht\\drs_reciever.generated.h"
         ],
         "ImportedModules": [],

@@ -5,7 +5,9 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "DRS_Broadcaster.h"
+#include "DRS_Reciever.h"
 #include "DRS_Processor.generated.h"
+
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -24,11 +26,15 @@ private:
 	//All Broadcasters in one Array
 	TArray<UDRS_Broadcaster*> BrActorArray;
 
+	//All Recievers in one Array
+	TArray<UDRS_Reciever*> RActorArray;
+
+
 	//Update SpeedArray
-	TArray<int>& GetRacersSpeeds();
+	TArray<int> GetRacersSpeeds();
 
 	//Formula Function/s, Calc gives the value and Produce turns it into the RaceLevel
-	static int CalcMean(TArray<int>& RaceSpeeds);
+	static int CalcMean(TArray<int> RaceSpeeds);
 
 	static int ProduceRaceLevel(int val);
 	static int ProduceRaceLevelAdjustable(int val, int FirstCap, int SecondCap);
@@ -41,5 +47,4 @@ public:
 	//Calls for the ACs to be updated, if they need to be
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void UpdateAdaptiveComps();
-
 };
