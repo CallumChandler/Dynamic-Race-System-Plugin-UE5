@@ -23,6 +23,6 @@ public:
 	FChangeRaceSpeed OnSpeedChangeDelegate;
 
 	//Event that runs when RaceLevel updates
-	UFUNCTION(BlueprintCallable, Category = "DRS")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "DRS")
 	void OnRaceSpeedChange(int NewRaceLevel);
 };

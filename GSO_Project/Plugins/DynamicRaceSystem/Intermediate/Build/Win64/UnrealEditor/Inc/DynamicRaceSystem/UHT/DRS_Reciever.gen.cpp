@@ -59,28 +59,22 @@ void FChangeRaceSpeed_DelegateWrapper(const FMulticastScriptDelegate& ChangeRace
 	Parms.RaceLevel=RaceLevel;
 	ChangeRaceSpeed.ProcessMulticastDelegate<UObject>(&Parms);
 }
-	DEFINE_FUNCTION(UDRS_Reciever::execOnRaceSpeedChange)
+	struct DRS_Reciever_eventOnRaceSpeedChange_Parms
 	{
-		P_GET_PROPERTY(FIntProperty,Z_Param_NewRaceLevel);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->OnRaceSpeedChange(Z_Param_NewRaceLevel);
-		P_NATIVE_END;
+		int32 NewRaceLevel;
+	};
+	static FName NAME_UDRS_Reciever_OnRaceSpeedChange = FName(TEXT("OnRaceSpeedChange"));
+	void UDRS_Reciever::OnRaceSpeedChange(int32 NewRaceLevel)
+	{
+		DRS_Reciever_eventOnRaceSpeedChange_Parms Parms;
+		Parms.NewRaceLevel=NewRaceLevel;
+		ProcessEvent(FindFunctionChecked(NAME_UDRS_Reciever_OnRaceSpeedChange),&Parms);
 	}
 	void UDRS_Reciever::StaticRegisterNativesUDRS_Reciever()
 	{
-		UClass* Class = UDRS_Reciever::StaticClass();
-		static const FNameNativePtrPair Funcs[] = {
-			{ "OnRaceSpeedChange", &UDRS_Reciever::execOnRaceSpeedChange },
-		};
-		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
 	struct Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics
 	{
-		struct DRS_Reciever_eventOnRaceSpeedChange_Parms
-		{
-			int32 NewRaceLevel;
-		};
 		static const UECodeGen_Private::FIntPropertyParams NewProp_NewRaceLevel;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -104,9 +98,9 @@ void FChangeRaceSpeed_DelegateWrapper(const FMulticastScriptDelegate& ChangeRace
 #endif
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UDRS_Reciever, nullptr, "OnRaceSpeedChange", nullptr, nullptr, Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::PropPointers), sizeof(Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::DRS_Reciever_eventOnRaceSpeedChange_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::Function_MetaDataParams), Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::Function_MetaDataParams) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UDRS_Reciever, nullptr, "OnRaceSpeedChange", nullptr, nullptr, Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::PropPointers), sizeof(DRS_Reciever_eventOnRaceSpeedChange_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::Function_MetaDataParams), Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::Function_MetaDataParams) };
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::PropPointers) < 2048);
-	static_assert(sizeof(Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange_Statics::DRS_Reciever_eventOnRaceSpeedChange_Parms) < MAX_uint16);
+	static_assert(sizeof(DRS_Reciever_eventOnRaceSpeedChange_Parms) < MAX_uint16);
 	UFunction* Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -142,7 +136,7 @@ void FChangeRaceSpeed_DelegateWrapper(const FMulticastScriptDelegate& ChangeRace
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UDRS_Reciever_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UDRS_Reciever_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange, "OnRaceSpeedChange" }, // 223424552
+		{ &Z_Construct_UFunction_UDRS_Reciever_OnRaceSpeedChange, "OnRaceSpeedChange" }, // 1786805037
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UDRS_Reciever_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -206,9 +200,9 @@ void FChangeRaceSpeed_DelegateWrapper(const FMulticastScriptDelegate& ChangeRace
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_0_FinalYearProject_Project_GearShiftOverdrive_GSO_Project_Plugins_DynamicRaceSystem_Source_DynamicRaceSystem_Public_DRS_Reciever_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UDRS_Reciever, UDRS_Reciever::StaticClass, TEXT("UDRS_Reciever"), &Z_Registration_Info_UClass_UDRS_Reciever, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDRS_Reciever), 3746530610U) },
+		{ Z_Construct_UClass_UDRS_Reciever, UDRS_Reciever::StaticClass, TEXT("UDRS_Reciever"), &Z_Registration_Info_UClass_UDRS_Reciever, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDRS_Reciever), 2889137150U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_0_FinalYearProject_Project_GearShiftOverdrive_GSO_Project_Plugins_DynamicRaceSystem_Source_DynamicRaceSystem_Public_DRS_Reciever_h_3944835824(TEXT("/Script/DynamicRaceSystem"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_0_FinalYearProject_Project_GearShiftOverdrive_GSO_Project_Plugins_DynamicRaceSystem_Source_DynamicRaceSystem_Public_DRS_Reciever_h_1731923291(TEXT("/Script/DynamicRaceSystem"),
 		Z_CompiledInDeferFile_FID_0_FinalYearProject_Project_GearShiftOverdrive_GSO_Project_Plugins_DynamicRaceSystem_Source_DynamicRaceSystem_Public_DRS_Reciever_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_0_FinalYearProject_Project_GearShiftOverdrive_GSO_Project_Plugins_DynamicRaceSystem_Source_DynamicRaceSystem_Public_DRS_Reciever_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

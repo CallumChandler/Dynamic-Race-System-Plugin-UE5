@@ -13,13 +13,13 @@ UDRS_Processor::UDRS_Processor()
 
 void UDRS_Processor::BeginPlay()
 {
+	ULevel* CurLevel = GetWorld()->GetCurrentLevel();
+
 	//Gets all Broadcaster Components and puts them into an Array
 	for (TObjectIterator<UDRS_Broadcaster> brc; brc; ++brc)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Brodcaster: %s"), *brc->GetOwner()->GetName());
-
 		//If component is in current level
-		if (brc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()))
+		if (brc->ComponentIsInLevel(CurLevel))
 		{
 			BrActorArray.Add(*brc);
 		}
@@ -28,10 +28,8 @@ void UDRS_Processor::BeginPlay()
 	//Gets all Reciever Components and puts them into an Array
 	for (TObjectIterator<UDRS_Reciever> rrc; rrc; ++rrc)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Reciever: %s"), *rrc->GetOwner()->GetName());
-
 		//If component is in current level
-		if (rrc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()))
+		if (rrc->ComponentIsInLevel(CurLevel))
 		{
 			RActorArray.Add(*rrc);
 		}
@@ -52,7 +50,7 @@ void UDRS_Processor::UpdateAdaptiveComps()
 			RaceLevel = TempLevel;
 
 			//Call for all ACs to Update
-			for (int i = 0; i < (RActorArray.Num() - 1); i++)
+			for (int i = 0; i < RActorArray.Num(); i++)
 			{
 				UE_LOG(LogTemp, Warning, TEXT("AC Updates"));
 
@@ -71,7 +69,7 @@ TArray<int> UDRS_Processor::GetRacersSpeeds()
 	int speed = 0;
 	int position = 1;
 
-	for (int i = 0; i <= (BrActorArray.Num() - 1); i++)
+	for (int i = 0; i < BrActorArray.Num(); i++)
 	{
 		speed = BrActorArray[i]->GetSpeed();
 		position = BrActorArray[i]->GetPosition();
