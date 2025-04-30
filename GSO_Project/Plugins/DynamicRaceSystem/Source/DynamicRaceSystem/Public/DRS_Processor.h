@@ -40,6 +40,9 @@ private:
 	static int ProduceRaceLevelAdjustable(int val, int FirstCap, int SecondCap);
 
 public:
+	//Adds a Reciever to the according array
+	void AddToRecieverArray(UDRS_Reciever* Reciever);
+
 	//Overall 'Level' of the Racers (1->3)
 	UPROPERTY(BlueprintReadOnly, Category = "DRS");
 	int RaceLevel = 1;

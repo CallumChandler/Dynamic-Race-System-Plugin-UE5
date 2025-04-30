@@ -36,6 +36,15 @@ void UDRS_Processor::BeginPlay()
 	}
 }
 
+void UDRS_Processor::AddToRecieverArray(UDRS_Reciever* Reciever)
+{
+	//If it doesn't contain it then add it
+	if(!RActorArray.Contains(Reciever))
+	{
+		RActorArray.Add(Reciever);
+	}
+}
+
 void UDRS_Processor::UpdateAdaptiveComps()
 {
 	if (!BrActorArray.IsEmpty()) //Check to ensure there are Brodcasters in the current Level
@@ -121,6 +130,8 @@ int UDRS_Processor::ProduceRaceLevelAdjustable(int val, int FirstCap, int Second
 		return 1;
 	}
 }
+
+
 
 
 
