@@ -24,7 +24,7 @@ public:
 
 	//Updates Recievers
 	UPROPERTY(BlueprintAssignable)
-	FChangeRaceSpeed OnSpeedChangeDelegate;
+	FChangeRaceSpeed OnSpeedChange;
 
 	//Event that runs when RaceLevel updates
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "DRS")

@@ -63,7 +63,7 @@ void UDRS_Processor::UpdateAdaptiveComps()
 			{
 				UE_LOG(LogTemp, Warning, TEXT("AC Updates"));
 
-				RActorArray[i]->OnSpeedChangeDelegate.Broadcast(RaceLevel);
+				RActorArray[i]->OnSpeedChange.Broadcast(RaceLevel);
 			}
 		}
 	}
