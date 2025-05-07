@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "DRS_Reciever.h"
-#include "Engine/PointLight.h"
+#include "Components/PointLightComponent.h"
 #include "ADRS_ColorShiftLight.generated.h"
 
 UCLASS()
@@ -22,9 +22,6 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	//LightColor, white by default
-	FLinearColor LightColor = FLinearColor::White;
-
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void SetColor(int RaceLevel);
 
@@ -34,5 +31,5 @@ public:
 
 	//PointLight Reference
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Light")
-	APointLight* PointLight;
+	UPointLightComponent* PointLight;
 };

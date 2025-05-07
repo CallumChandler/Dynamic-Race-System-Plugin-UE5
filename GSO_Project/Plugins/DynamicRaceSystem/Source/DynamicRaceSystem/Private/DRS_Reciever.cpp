@@ -8,7 +8,7 @@ UDRS_Reciever::UDRS_Reciever()
 {
 	PrimaryComponentTick.bCanEverTick = false;
 
-	OnSpeedChange.AddDynamic(this, &UDRS_Reciever::OnRaceSpeedChange);
+	OnRaceLevelChange.AddDynamic(this, &UDRS_Reciever::OnRaceSpeedChange);
 }
 
 void UDRS_Reciever::ConnectToProcessor()

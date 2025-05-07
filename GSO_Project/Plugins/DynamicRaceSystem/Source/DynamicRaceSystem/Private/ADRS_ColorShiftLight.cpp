@@ -10,13 +10,10 @@ AADRS_ColorShiftLight::AADRS_ColorShiftLight()
 	PrimaryActorTick.bCanEverTick = true;
 
 	RecieverComponent = CreateDefaultSubobject<UDRS_Reciever>("Reciever");
-	PointLight = CreateDefaultSubobject<APointLight>("Light");
+	PointLight = CreateDefaultSubobject<UPointLightComponent>("Light");
 
-	if (PointLight)
-	{
-		PointLight->SetLightColor(LightColor);
-		PointLight->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
-	}
+	PointLight->SetLightColor(FLinearColor::White);
+	RootComponent = PointLight;
 }
 
 // Called when the game starts or when spawned
@@ -26,26 +23,31 @@ void AADRS_ColorShiftLight::BeginPlay()
 	
 	//Connect to Processor
 	RecieverComponent->ConnectToProcessor();
-	RecieverComponent->OnSpeedChange.AddDynamic(this, &AADRS_ColorShiftLight::SetColor);
+	RecieverComponent->OnRaceLevelChange.AddDynamic(this, &AADRS_ColorShiftLight::SetColor);
 }
 
 void AADRS_ColorShiftLight::SetColor(int RaceLevel)
 {
+	FString val = FString::FromInt(RaceLevel);
+	UE_LOG(LogTemp, Warning, TEXT("The RaceLevel is: %s"), *val);
+
 	//Change LightColor according to RaceLevel
 	switch (RaceLevel)
 	{
 	case 1:
-		LightColor = FLinearColor::Green;
+		PointLight->SetLightColor(FLinearColor::Green);
+		break;
 
 	case 2:
-		LightColor = FLinearColor::Yellow;
+		PointLight->SetLightColor(FLinearColor::Yellow);
+		break;
 
 	case 3:
-		LightColor = FLinearColor::Red;
+		PointLight->SetLightColor(FLinearColor::Red);
+		break;
 
 	default:
-		LightColor = FLinearColor::White;
+		PointLight->SetLightColor(FLinearColor::White);
+		break;
 	}
-
-	PointLight->SetLightColor(LightColor);
 }
