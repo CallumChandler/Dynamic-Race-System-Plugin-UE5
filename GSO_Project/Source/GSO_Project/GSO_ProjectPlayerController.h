@@ -38,7 +38,7 @@ protected:
 	// Begin Actor interface
 protected:
 
-	virtual void BeginPlay() override;
+	void OnPossessed();
 
 public:
 

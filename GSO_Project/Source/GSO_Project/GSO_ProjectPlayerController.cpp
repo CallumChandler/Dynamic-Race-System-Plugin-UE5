@@ -7,7 +7,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "ChaosWheeledVehicleMovementComponent.h"
 
-void AGSO_ProjectPlayerController::BeginPlay()
+void AGSO_ProjectPlayerController::OnPossessed()
 {
 	Super::BeginPlay();
 
@@ -21,9 +21,12 @@ void AGSO_ProjectPlayerController::BeginPlay()
 	// spawn the UI widget and add it to the viewport
 	VehicleUI = CreateWidget<UGSO_ProjectUI>(this, VehicleUIClass);
 
-	check(VehicleUI);
+	if (VehicleUI)
+	{
+		check(VehicleUI);
 
-	VehicleUI->AddToViewport();
+		VehicleUI->AddToPlayerScreen();
+	}
 }
 
 void AGSO_ProjectPlayerController::Tick(float Delta)
@@ -43,4 +46,10 @@ void AGSO_ProjectPlayerController::OnPossess(APawn* InPawn)
 
 	// get a pointer to the controlled pawn
 	VehiclePawn = CastChecked<AGSO_ProjectPawn>(InPawn);
+
+	//If valid pointer, then run OnPossessed
+	if (VehiclePawn)
+	{
+		OnPossessed();
+	}
 }
