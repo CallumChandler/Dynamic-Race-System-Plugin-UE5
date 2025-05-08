@@ -21,7 +21,7 @@ void AGSO_ProjectPlayerController::BeginPlay()
 	// spawn the UI widget and add it to the viewport
 	VehicleUI = CreateWidget<UGSO_ProjectUI>(this, VehicleUIClass);
 
-	check(VehicleUI);
+	check(VehicleUI); //!!!Causing issues!!!
 
 	VehicleUI->AddToViewport();
 }
