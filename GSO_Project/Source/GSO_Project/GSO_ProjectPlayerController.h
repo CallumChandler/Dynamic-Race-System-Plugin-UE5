@@ -38,17 +38,21 @@ protected:
 	// Begin Actor interface
 protected:
 
-	void OnPossessed();
+	//void OnPossessed();
+	virtual void BeginPlay() override;
 
 public:
 
 	virtual void Tick(float Delta) override;
 
+	//BindWidget to LocalController
+	UFUNCTION(Client, Reliable, WithValidation)
+	void BindWidgetToLocal();
+
 	// End Actor interface
 
 	// Begin PlayerController interface
 protected:
-
 	virtual void OnPossess(APawn* InPawn) override;
 
 	// End PlayerController interface

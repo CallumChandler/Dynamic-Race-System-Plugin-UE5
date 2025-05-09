@@ -7,7 +7,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "ChaosWheeledVehicleMovementComponent.h"
 
-void AGSO_ProjectPlayerController::OnPossessed()
+void AGSO_ProjectPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -18,20 +18,18 @@ void AGSO_ProjectPlayerController::OnPossessed()
 		Subsystem->AddMappingContext(InputMappingContext, 0);
 	}
 
-	// spawn the UI widget and add it to the viewport
-	VehicleUI = CreateWidget<UGSO_ProjectUI>(this, VehicleUIClass);
-
-	if (VehicleUI)
-	{
-		check(VehicleUI);
-
-		VehicleUI->AddToPlayerScreen();
-	}
+	BindWidgetToLocal();
 }
 
 void AGSO_ProjectPlayerController::Tick(float Delta)
 {
 	Super::Tick(Delta);
+
+	if (VehicleUI)
+	{
+		FString nameUI = VehicleUI->GetName();
+		UE_LOG(LogTemp, Warning, TEXT("Pawn is: %s"), *FString(nameUI));
+	}
 
 	if (IsValid(VehiclePawn) && IsValid(VehicleUI))
 	{
@@ -44,12 +42,26 @@ void AGSO_ProjectPlayerController::OnPossess(APawn* InPawn)
 {
 	Super::OnPossess(InPawn);
 
-	// get a pointer to the controlled pawn
-	VehiclePawn = CastChecked<AGSO_ProjectPawn>(InPawn);
-
-	//If valid pointer, then run OnPossessed
-	if (VehiclePawn)
+	if (InPawn)
 	{
-		OnPossessed();
+		// get a pointer to the controlled pawn
+		VehiclePawn = CastChecked<AGSO_ProjectPawn>(InPawn);
 	}
+}
+
+void AGSO_ProjectPlayerController::BindWidgetToLocal_Implementation()
+{
+	// spawn the UI widget and add it to the viewport
+	VehicleUI = CreateWidget<UGSO_ProjectUI>(this, VehicleUIClass);
+
+	if (VehicleUI)
+	{	
+		//check(VehicleUI);
+		VehicleUI->AddToPlayerScreen();
+	}
+}
+
+bool AGSO_ProjectPlayerController::BindWidgetToLocal_Validate()
+{
+	return true;
 }
