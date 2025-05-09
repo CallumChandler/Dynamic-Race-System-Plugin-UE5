@@ -18,21 +18,39 @@ void AGSO_ProjectPlayerController::BeginPlay()
 		Subsystem->AddMappingContext(InputMappingContext, 0);
 	}
 
-	BindWidgetToLocal();
+	if (IsLocalPlayerController())
+	{
+		//spawn the UI widget and add it to the viewport
+		VehicleUI = CreateWidget<UGSO_ProjectUI>(this, VehicleUIClass);
+
+		if (VehicleUI)
+		{
+			//check(VehicleUI);
+			VehicleUI->AddToPlayerScreen();
+		}
+	}
 }
 
 void AGSO_ProjectPlayerController::Tick(float Delta)
 {
 	Super::Tick(Delta);
 
+	/*UE_LOG(LogTemp, Warning, TEXT("---- For %s ----"), *FString(this->GetName()));
+
+	if (VehiclePawn)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Pawn: %s"), *FString(VehiclePawn->GetName()));
+	}
+
 	if (VehicleUI)
 	{
-		FString nameUI = VehicleUI->GetName();
-		UE_LOG(LogTemp, Warning, TEXT("Pawn is: %s"), *FString(nameUI));
-	}
+		UE_LOG(LogTemp, Warning, TEXT("UI: %s"), *FString(VehicleUI->GetName()));
+	}*/
 
 	if (IsValid(VehiclePawn) && IsValid(VehicleUI))
 	{
+		
+
 		VehicleUI->UpdateSpeed(VehiclePawn->GetChaosVehicleMovement()->GetForwardSpeed());
 		VehicleUI->UpdateGear(VehiclePawn->GetChaosVehicleMovement()->GetCurrentGear());
 	}
@@ -44,24 +62,8 @@ void AGSO_ProjectPlayerController::OnPossess(APawn* InPawn)
 
 	if (InPawn)
 	{
-		// get a pointer to the controlled pawn
+		//Tries to get a pointer to the controlled pawn
 		VehiclePawn = CastChecked<AGSO_ProjectPawn>(InPawn);
 	}
 }
 
-void AGSO_ProjectPlayerController::BindWidgetToLocal_Implementation()
-{
-	// spawn the UI widget and add it to the viewport
-	VehicleUI = CreateWidget<UGSO_ProjectUI>(this, VehicleUIClass);
-
-	if (VehicleUI)
-	{	
-		//check(VehicleUI);
-		VehicleUI->AddToPlayerScreen();
-	}
-}
-
-bool AGSO_ProjectPlayerController::BindWidgetToLocal_Validate()
-{
-	return true;
-}

@@ -37,17 +37,10 @@ protected:
 
 	// Begin Actor interface
 protected:
-
-	//void OnPossessed();
 	virtual void BeginPlay() override;
 
-public:
-
+public:	
 	virtual void Tick(float Delta) override;
-
-	//BindWidget to LocalController
-	UFUNCTION(Client, Reliable, WithValidation)
-	void BindWidgetToLocal();
 
 	// End Actor interface
 
