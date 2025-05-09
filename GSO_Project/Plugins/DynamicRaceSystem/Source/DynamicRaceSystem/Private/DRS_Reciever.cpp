@@ -23,3 +23,16 @@ void UDRS_Reciever::ConnectToProcessor()
 		}
 	}
 }
+
+void UDRS_Reciever::ConnectToProcessorByName(FString ProcessorName)
+{
+	//Gets the Processor and puits
+	for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
+	{
+		//If component is in current level
+		if (prc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()) && prc->GetName() == ProcessorName)
+		{
+			prc->AddToRecieverArray(this);
+		}
+	}
+}

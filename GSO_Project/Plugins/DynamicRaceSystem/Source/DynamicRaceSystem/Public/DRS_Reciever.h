@@ -22,6 +22,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void ConnectToProcessor();
 
+	//Adds this Reciever to a designated Processor Manually
+	UFUNCTION(BlueprintCallable, Category = "DRS")
+	void ConnectToProcessorByName(FString ProcessorName); //!!!TEST!!!
+
 	//Updates Recievers
 	UPROPERTY(BlueprintAssignable)
 	FChangeRaceSpeed OnRaceLevelChange;
