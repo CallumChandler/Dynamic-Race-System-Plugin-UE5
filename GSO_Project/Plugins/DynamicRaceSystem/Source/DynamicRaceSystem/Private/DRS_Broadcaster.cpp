@@ -10,6 +10,8 @@ UDRS_Broadcaster::UDRS_Broadcaster()
 
 	RacerSpeed = 0;
 	RacerPosition = 1;
+
+	SetIsReplicated(true);
 }
 
 void UDRS_Broadcaster::SetSpeed(int speed)

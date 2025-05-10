@@ -8,7 +8,7 @@ UDRS_Processor::UDRS_Processor()
 {
 	PrimaryComponentTick.bCanEverTick = false;
 
-	// ...
+	SetIsReplicated(true);
 }
 
 void UDRS_Processor::BeginPlay()
@@ -24,6 +24,8 @@ void UDRS_Processor::BeginPlay()
 			BrActorArray.Add(*brc);
 		}
 	}
+
+	UE_LOG(LogTemp, Warning, TEXT("Number of Broadcasters: %i"), BrActorArray.Num());
 
 	//Gets all Reciever Components and puts them into an Array
 	for (TObjectIterator<UDRS_Reciever> rrc; rrc; ++rrc)

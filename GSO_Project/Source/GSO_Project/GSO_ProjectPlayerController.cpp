@@ -35,18 +35,6 @@ void AGSO_ProjectPlayerController::Tick(float Delta)
 {
 	Super::Tick(Delta);
 
-	/*UE_LOG(LogTemp, Warning, TEXT("---- For %s ----"), *FString(this->GetName()));
-
-	if (VehiclePawn)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Pawn: %s"), *FString(VehiclePawn->GetName()));
-	}
-
-	if (VehicleUI)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("UI: %s"), *FString(VehicleUI->GetName()));
-	}*/
-
 	if (IsValid(VehiclePawn) && IsValid(VehicleUI))
 	{
 		

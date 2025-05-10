@@ -29,7 +29,6 @@ private:
 	//All Recievers in one Array
 	TArray<UDRS_Reciever*> RActorArray;
 
-
 	//Update SpeedArray
 	TArray<int> GetRacersSpeeds();
 
