@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Net/UnrealNetwork.h"
 #include "DRS_Broadcaster.generated.h"
 
 
@@ -16,17 +17,20 @@ public:
 	// Sets default values for this component's properties
 	UDRS_Broadcaster();
 
-private:
+protected:
+	void BeginPlay();
+
+protected:
 	//Broadcaster Values
 	int RacerSpeed;
 	int RacerPosition;
 
 public:
 	//Get/Set Broadcaster Values
-	UFUNCTION(BlueprintCallable, Category = "DRS")
+	UFUNCTION(BlueprintCallable, Server, Reliable, WithValidation, Category = "DRS")
 	void SetSpeed(int speed);
 
-	UFUNCTION(BlueprintCallable, Category = "DRS")
+	UFUNCTION(BlueprintCallable, Server, Reliable, WithValidation, Category = "DRS")
 	void SetPosition(int position);
 
 	UFUNCTION(BlueprintCallable, Category = "DRS")

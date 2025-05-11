@@ -7,25 +7,11 @@
 UDRS_Processor::UDRS_Processor()
 {
 	PrimaryComponentTick.bCanEverTick = false;
-
-	SetIsReplicated(true);
 }
 
 void UDRS_Processor::BeginPlay()
 {
 	ULevel* CurLevel = GetWorld()->GetCurrentLevel();
-
-	//Gets all Broadcaster Components and puts them into an Array
-	for (TObjectIterator<UDRS_Broadcaster> brc; brc; ++brc)
-	{
-		//If component is in current level
-		if (brc->ComponentIsInLevel(CurLevel))
-		{
-			BrActorArray.Add(*brc);
-		}
-	}
-
-	UE_LOG(LogTemp, Warning, TEXT("Number of Broadcasters: %i"), BrActorArray.Num());
 
 	//Gets all Reciever Components and puts them into an Array
 	for (TObjectIterator<UDRS_Reciever> rrc; rrc; ++rrc)
@@ -45,6 +31,18 @@ void UDRS_Processor::AddToRecieverArray(UDRS_Reciever* Reciever)
 	{
 		RActorArray.Add(Reciever);
 	}
+}
+
+void UDRS_Processor::AddToBroadcasterArray(UDRS_Broadcaster* Broadcaster)
+{
+	//If it doesn't contain it then add it
+	if (!BrActorArray.Contains(Broadcaster))
+	{
+		BrActorArray.Add(Broadcaster);
+	}
+	
+	//!!!FOR TESTING PURPOSES!!!, Sets position for Broadcasters
+	Broadcaster->SetPosition(BrActorArray.Num());
 }
 
 void UDRS_Processor::UpdateAdaptiveComps()
@@ -132,6 +130,8 @@ int UDRS_Processor::ProduceRaceLevelAdjustable(int val, int FirstCap, int Second
 		return 1;
 	}
 }
+
+
 
 
 

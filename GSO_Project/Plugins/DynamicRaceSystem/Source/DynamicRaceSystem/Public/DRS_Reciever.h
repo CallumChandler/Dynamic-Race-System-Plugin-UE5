@@ -24,7 +24,7 @@ public:
 
 	//Adds this Reciever to a designated Processor Manually
 	UFUNCTION(BlueprintCallable, Category = "DRS")
-	void ConnectToProcessorByName(FString ProcessorName); //!!!TEST!!!
+	void ConnectToProcessorByName(FString ProcessorName); //!!!TO BE TESTED!!!
 
 	//Updates Recievers
 	UPROPERTY(BlueprintAssignable)
