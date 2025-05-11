@@ -107,21 +107,16 @@ int UDRS_Processor::CalcMean(TArray<int> RaceSpeeds)
 
 int UDRS_Processor::ProduceRaceLevel(int val)
 {
-	//Returns value accordint to linear conversion 0->180 => 1->3, rounded up
-	return FMath::Clamp(FMath::DivideAndRoundUp(val, 60), 1, 3);
-}
-
-int UDRS_Processor::ProduceRaceLevelAdjustable(int val, int FirstCap, int SecondCap)
-{
-	if (val <= FirstCap)
+	//Returns value accordint to Bounds
+	if (val <= LowerRaceBound)
 	{
 		return 1;
 	}
-	else if (val <= SecondCap)
+	else if (val <= UpperRaceBound)
 	{
 		return 2;
 	}
-	else if(val > SecondCap)
+	else if (val > UpperRaceBound)
 	{
 		return 3;
 	}

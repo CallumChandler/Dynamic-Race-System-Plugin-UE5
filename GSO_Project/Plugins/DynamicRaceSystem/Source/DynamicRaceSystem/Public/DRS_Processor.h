@@ -35,10 +35,16 @@ private:
 	//Formula Function/s, Calc gives the value and Produce turns it into the RaceLevel
 	static int CalcMean(TArray<int> RaceSpeeds);
 
-	static int ProduceRaceLevel(int val);
-	static int ProduceRaceLevelAdjustable(int val, int FirstCap, int SecondCap);
+	int ProduceRaceLevel(int val);
 
 public:
+	//Race Level Bounds
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "DRS")
+	int LowerRaceBound = 60;
+
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "DRS")
+	int UpperRaceBound = 120;
+
 	//Adds a Reciever to the according array
 	void AddToRecieverArray(UDRS_Reciever* Reciever);
 
