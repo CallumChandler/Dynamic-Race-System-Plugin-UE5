@@ -73,36 +73,28 @@ TArray<int> UDRS_Processor::GetRacersSpeeds()
 {
 	//Makes and fills an Array accord to length of BrActorArray
 	TArray<int> SpeedArray;
-	SpeedArray.Init(0, (BrActorArray.Num() - 1));
+	SpeedArray.Init(0, BrActorArray.Num());
 
 	int speed = 0;
 	int position = 1;
 
 	UE_LOG(LogTemp, Warning, TEXT("----Get Racers Speed Test----"));
 
+	UE_LOG(LogTemp, Warning, TEXT("Speed Array Length: %d"), SpeedArray.Num());
+	
+	//Loop through all Broadcasters
 	for (int i = 0; i < BrActorArray.Num(); i++)
 	{
-		//If on Server
-		if (BrActorArray[i]->GetOwner()->HasAuthority())
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Server Speed: %f"), (BrActorArray[i]->GetSpeed()));
-			UE_LOG(LogTemp, Warning, TEXT("Server Vehicle: %s"), *FString(BrActorArray[i]->GetOwner()->GetName()));
+		UE_LOG(LogTemp, Warning, TEXT("Vehicle: %d"), i);
+		UE_LOG(LogTemp, Warning, TEXT("Speed: %d"), BrActorArray[i]->GetSpeed());
 
-			speed = BrActorArray[i]->GetSpeed();
-			position = BrActorArray[i]->GetPosition();
-		}
-		else //Otherwise
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Client Speed: %f"), (BrActorArray[i]->GetSpeed()));
-			UE_LOG(LogTemp, Warning, TEXT("Client Vehicle: %s"), *FString(BrActorArray[i]->GetOwner()->GetName()));
-
-			speed = BrActorArray[i]->GetSpeed();
-			position = BrActorArray[i]->GetPosition();
-		}
+		//Gets Speed & Position
+		speed = BrActorArray[i]->GetSpeed();
+		position = BrActorArray[i]->GetPosition();
 
 		//Add Speed value to position in Array according to the Racers Position
 		//This, practically speaking, lets a 1D Array hold the data of a 2D Array
-		SpeedArray.Insert(speed, (position - 1));
+		SpeedArray[position - 1] = speed;
 	}
 
 	return SpeedArray;

@@ -19,19 +19,26 @@ void UDRS_Broadcaster::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
+	//Replicates Speed and Position, ensuring they're shared between Client and Server
 	DOREPLIFETIME(UDRS_Broadcaster, RacerSpeed);
 	DOREPLIFETIME(UDRS_Broadcaster, RacerPosition);
 }
 
 void UDRS_Broadcaster::BeginPlay()
 {
-	//Gets the Processor and adds it to them
-	for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
+	Super::BeginPlay();
+
+	//If attached to a Actor on the Server, necessary since it SHOULD only exist on the Server
+	if (GetOwner()->HasAuthority())
 	{
-		//If component is in current level
-		if (prc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()))
+		//Then gets the Processor and adds itself (Broadcaster) to it
+		for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
 		{
-			prc->AddToBroadcasterArray(this);
+			//If component is in current level
+			if (prc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()))
+			{
+				prc->AddToBroadcasterArray(this);
+			}
 		}
 	}
 }
