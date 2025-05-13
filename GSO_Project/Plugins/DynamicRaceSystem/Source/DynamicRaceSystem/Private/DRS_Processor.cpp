@@ -61,7 +61,7 @@ void UDRS_Processor::UpdateAdaptiveComps()
 			//Call for all ACs to Update
 			for (int i = 0; i < RActorArray.Num(); i++)
 			{
-				UE_LOG(LogTemp, Warning, TEXT("AC Updates"));
+				//UE_LOG(LogTemp, Warning, TEXT("AC Updates"));
 
 				RActorArray[i]->OnRaceLevelChange.Broadcast(RaceLevel);
 			}
@@ -78,10 +78,27 @@ TArray<int> UDRS_Processor::GetRacersSpeeds()
 	int speed = 0;
 	int position = 1;
 
+	UE_LOG(LogTemp, Warning, TEXT("----Get Racers Speed Test----"));
+
 	for (int i = 0; i < BrActorArray.Num(); i++)
 	{
-		speed = BrActorArray[i]->GetSpeed();
-		position = BrActorArray[i]->GetPosition();
+		//If on Server
+		if (BrActorArray[i]->GetOwner()->HasAuthority())
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Server Speed: %f"), (BrActorArray[i]->GetSpeed()));
+			UE_LOG(LogTemp, Warning, TEXT("Server Vehicle: %s"), *FString(BrActorArray[i]->GetOwner()->GetName()));
+
+			speed = BrActorArray[i]->GetSpeed();
+			position = BrActorArray[i]->GetPosition();
+		}
+		else //Otherwise
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Client Speed: %f"), (BrActorArray[i]->GetSpeed()));
+			UE_LOG(LogTemp, Warning, TEXT("Client Vehicle: %s"), *FString(BrActorArray[i]->GetOwner()->GetName()));
+
+			speed = BrActorArray[i]->GetSpeed();
+			position = BrActorArray[i]->GetPosition();
+		}
 
 		//Add Speed value to position in Array according to the Racers Position
 		//This, practically speaking, lets a 1D Array hold the data of a 2D Array

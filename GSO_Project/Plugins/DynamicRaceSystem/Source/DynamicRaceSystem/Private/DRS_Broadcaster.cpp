@@ -15,6 +15,14 @@ UDRS_Broadcaster::UDRS_Broadcaster()
 	SetIsReplicated(true);
 }
 
+void UDRS_Broadcaster::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(UDRS_Broadcaster, RacerSpeed);
+	DOREPLIFETIME(UDRS_Broadcaster, RacerPosition);
+}
+
 void UDRS_Broadcaster::BeginPlay()
 {
 	//Gets the Processor and adds it to them
@@ -28,38 +36,14 @@ void UDRS_Broadcaster::BeginPlay()
 	}
 }
 
-void UDRS_Broadcaster::SetSpeed_Implementation(int speed)
+void UDRS_Broadcaster::SetSpeed(int speed)
 {
 	RacerSpeed = speed;
 }
 
-bool UDRS_Broadcaster::SetSpeed_Validate(int speed)
-{
-	if (speed)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-void UDRS_Broadcaster::SetPosition_Implementation(int position)
+void UDRS_Broadcaster::SetPosition(int position)
 {
 	RacerPosition = position;
-}
-
-bool UDRS_Broadcaster::SetPosition_Validate(int position)
-{
-	if (position)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
 }
 
 int UDRS_Broadcaster::GetSpeed()

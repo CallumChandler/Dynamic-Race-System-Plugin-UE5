@@ -17,20 +17,25 @@ public:
 	// Sets default values for this component's properties
 	UDRS_Broadcaster();
 
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
 protected:
 	void BeginPlay();
 
 protected:
 	//Broadcaster Values
+	UPROPERTY(Replicated)
 	int RacerSpeed;
+
+	UPROPERTY(Replicated)
 	int RacerPosition;
 
 public:
 	//Get/Set Broadcaster Values
-	UFUNCTION(BlueprintCallable, Server, Reliable, WithValidation, Category = "DRS")
+	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void SetSpeed(int speed);
 
-	UFUNCTION(BlueprintCallable, Server, Reliable, WithValidation, Category = "DRS")
+	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void SetPosition(int position);
 
 	UFUNCTION(BlueprintCallable, Category = "DRS")

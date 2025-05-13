@@ -15,7 +15,7 @@ UDRS_Reciever::UDRS_Reciever()
 
 void UDRS_Reciever::ConnectToProcessor()
 {
-	//Gets the Processor and puits
+	//Gets the Processor candidates and iterates
 	for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
 	{
 		//If component is in current level
@@ -28,10 +28,10 @@ void UDRS_Reciever::ConnectToProcessor()
 
 void UDRS_Reciever::ConnectToProcessorByName(FString ProcessorName)
 {
-	//Gets the Processor and puits
+	//Gets the Processor candidates and iterates
 	for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
 	{
-		//If component is in current level
+		//If component is in current level and has right name
 		if (prc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()) && prc->GetName() == ProcessorName)
 		{
 			prc->AddToRecieverArray(this);
