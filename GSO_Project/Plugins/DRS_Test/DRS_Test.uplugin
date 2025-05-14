@@ -1,8 +1,8 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "0.3",
-	"FriendlyName": "DynamicRaceSystem",
+	"VersionName": "0.1",
+	"FriendlyName": "DRS_Test",
 	"Description": "",
 	"Category": "Other",
 	"CreatedBy": "",
@@ -16,9 +16,15 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "DynamicRaceSystem",
+			"Name": "DRS_Test",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "DynamicRaceSystem",
+			"Enabled":  true
 		}
 	]
 }
