@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Net/UnrealNetwork.h"
 #include "GameFramework/PlayerState.h"
 #include "DRS_Reciever.generated.h"
 
@@ -18,6 +19,9 @@ public:
 	// Sets default values for this component's properties
 	UDRS_Reciever();
 
+	//Replicates values
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
 	//Adds this particular Reciever to the Processor Manually (to be used only if World Partition is in use)
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void ConnectToProcessor();
@@ -27,7 +31,7 @@ public:
 	void ConnectToProcessorByName(FString ProcessorName); //!!!TO BE TESTED!!!
 
 	//Updates Recievers
-	UPROPERTY(BlueprintAssignable)
+	UPROPERTY(BlueprintAssignable, Replicated)
 	FChangeRaceSpeed OnRaceLevelChange;
 
 	//Event that runs when RaceLevel updates

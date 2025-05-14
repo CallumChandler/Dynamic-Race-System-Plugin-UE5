@@ -28,29 +28,25 @@ void UDRS_Broadcaster::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//If attached to a Actor on the Server, necessary since it SHOULD only exist on the Server
-	if (GetOwner()->HasAuthority())
+	//Gets all active the Processor/s and add this Broadcaster to them
+	for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
 	{
-		//Then gets the Processor and adds itself (Broadcaster) to it
-		for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
+		//If component is in current level
+		if (prc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()))
 		{
-			//If component is in current level
-			if (prc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()))
-			{
-				prc->AddToBroadcasterArray(this);
-			}
+			prc->AddToBroadcasterArray(this);
 		}
 	}
 }
 
 void UDRS_Broadcaster::SetSpeed(int speed)
 {
-	RacerSpeed = speed;
+	RacerSpeed = FMath::Clamp(speed, 0, 999);
 }
 
 void UDRS_Broadcaster::SetPosition(int position)
 {
-	RacerPosition = position;
+	RacerPosition = FMath::Clamp(position, 0, 999);
 }
 
 int UDRS_Broadcaster::GetSpeed()

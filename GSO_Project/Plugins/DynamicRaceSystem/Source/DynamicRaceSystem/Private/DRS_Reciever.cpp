@@ -13,6 +13,14 @@ UDRS_Reciever::UDRS_Reciever()
 	OnRaceLevelChange.AddDynamic(this, &UDRS_Reciever::OnRaceSpeedChange);
 }
 
+void UDRS_Reciever::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	//Replicates Delegate to ensure both Client and Server are triggered
+	DOREPLIFETIME(UDRS_Reciever, OnRaceLevelChange);
+}
+
 void UDRS_Reciever::ConnectToProcessor()
 {
 	//Gets the Processor candidates and iterates
@@ -34,7 +42,7 @@ void UDRS_Reciever::ConnectToProcessorByName(FString ProcessorName)
 		//If component is in current level and has right name
 		if (prc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()) && prc->GetName() == ProcessorName)
 		{
-			prc->AddToRecieverArray(this);
+				prc->AddToRecieverArray(this);
 		}
 	}
 }

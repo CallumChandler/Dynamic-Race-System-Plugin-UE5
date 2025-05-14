@@ -19,7 +19,7 @@ void UDRS_Processor::BeginPlay()
 		//If component is in current level
 		if (rrc->ComponentIsInLevel(CurLevel))
 		{
-			RActorArray.Add(*rrc);
+			AddToRecieverArray(*rrc);
 		}
 	}
 }

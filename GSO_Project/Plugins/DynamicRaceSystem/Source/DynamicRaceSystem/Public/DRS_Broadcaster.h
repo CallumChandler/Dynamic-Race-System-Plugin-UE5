@@ -32,15 +32,20 @@ protected:
 
 public:
 	//Get/Set Broadcaster Values
+	// 
+	//Set Speed for DRS
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void SetSpeed(int speed);
 
+	//Set Position for DRS
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void SetPosition(int position);
 
+	//Get Speed for DRS
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	int GetSpeed();
-
+	
+	//Get Position for DRS
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	int GetPosition();
 
