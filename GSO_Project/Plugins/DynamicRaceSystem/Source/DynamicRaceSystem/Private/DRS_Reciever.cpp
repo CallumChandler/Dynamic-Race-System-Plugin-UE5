@@ -7,9 +7,9 @@
 UDRS_Reciever::UDRS_Reciever()
 {
 	PrimaryComponentTick.bCanEverTick = false;
-
 	SetIsReplicated(true);
 
+	RaceLevel = 0;
 	OnRaceLevelChange.AddDynamic(this, &UDRS_Reciever::OnRaceSpeedChange);
 }
 
@@ -18,11 +18,34 @@ void UDRS_Reciever::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	//Replicates Delegate to ensure both Client and Server are triggered
-	DOREPLIFETIME(UDRS_Reciever, OnRaceLevelChange);
+	DOREPLIFETIME(UDRS_Reciever, RaceLevel);
+}
+
+void UDRS_Reciever::UpdateRaceLevel(int NewRaceLevel)
+{
+	RaceLevel = NewRaceLevel;
+
+	//Calls for Update on Servers
+	if (GetOwnerRole() == ROLE_Authority)
+	{
+		OnRaceLevelUpdate();
+	}
+}
+
+void UDRS_Reciever::OnRep_RaceLevel()
+{
+	//Calls for Update on Clients
+	OnRaceLevelUpdate();
+}
+
+void UDRS_Reciever::OnRaceLevelUpdate()
+{
+	//Updates the ACs
+	OnRaceLevelChange.Broadcast(RaceLevel);
 }
 
 void UDRS_Reciever::ConnectToProcessor()
-{
+{		
 	//Gets the Processor candidates and iterates
 	for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
 	{

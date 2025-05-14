@@ -28,13 +28,16 @@ void UDRS_Broadcaster::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//Gets all active the Processor/s and add this Broadcaster to them
-	for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
+	if (GetOwnerRole() == ROLE_Authority) //Ensures the connection is made on the Server
 	{
-		//If component is in current level
-		if (prc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()))
+		//Gets all active the Processor/s and add this Broadcaster to them
+		for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
 		{
-			prc->AddToBroadcasterArray(this);
+			//If component is in current level
+			if (prc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()))
+			{
+				prc->AddToBroadcasterArray(this);
+			}
 		}
 	}
 }

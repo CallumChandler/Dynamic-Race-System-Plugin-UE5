@@ -31,7 +31,6 @@ void AADRS_ColorShiftLight::BeginPlay()
 void AADRS_ColorShiftLight::SetColor(int RaceLevel)
 {
 	FString val = FString::FromInt(RaceLevel);
-	UE_LOG(LogTemp, Warning, TEXT("The RaceLevel is: %s"), *val);
 
 	//Change LightColor according to RaceLevel
 	switch (RaceLevel)

@@ -21,6 +21,32 @@ public:
 
 	//Replicates values
 	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	
+	//Sets new RaceLevel Value
+	UFUNCTION(Category = "DRS")
+	void UpdateRaceLevel(int NewRaceLevel);
+
+protected:
+	//RaceLevel Value
+	UPROPERTY(ReplicatedUsing = OnRep_RaceLevel)
+	int RaceLevel;
+	
+	//When RaceLevel changes this is run on all systems
+	UFUNCTION()
+	void OnRep_RaceLevel();
+
+	//When RaceLevel value is updated
+	void OnRaceLevelUpdate();
+
+
+public:
+	//Updates Recievers
+	UPROPERTY(BlueprintAssignable)
+	FChangeRaceSpeed OnRaceLevelChange;
+	
+	//Event that runs when RaceLevel updates
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "DRS")
+	void OnRaceSpeedChange(int NewRaceLevel);
 
 	//Adds this particular Reciever to the Processor Manually (to be used only if World Partition is in use)
 	UFUNCTION(BlueprintCallable, Category = "DRS")
@@ -30,11 +56,4 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void ConnectToProcessorByName(FString ProcessorName); //!!!TO BE TESTED!!!
 
-	//Updates Recievers
-	UPROPERTY(BlueprintAssignable, Replicated)
-	FChangeRaceSpeed OnRaceLevelChange;
-
-	//Event that runs when RaceLevel updates
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "DRS")
-	void OnRaceSpeedChange(int NewRaceLevel);
 };

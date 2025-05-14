@@ -63,7 +63,7 @@ void UDRS_Processor::UpdateAdaptiveComps()
 			{
 				//UE_LOG(LogTemp, Warning, TEXT("AC Updates"));
 
-				RActorArray[i]->OnRaceLevelChange.Broadcast(RaceLevel);
+				RActorArray[i]->UpdateRaceLevel(RaceLevel);
 			}
 		}
 	}
@@ -78,15 +78,14 @@ TArray<int> UDRS_Processor::GetRacersSpeeds()
 	int speed = 0;
 	int position = 1;
 
-	UE_LOG(LogTemp, Warning, TEXT("----Get Racers Speed Test----"));
-
-	UE_LOG(LogTemp, Warning, TEXT("Speed Array Length: %d"), SpeedArray.Num());
+	/*UE_LOG(LogTemp, Warning, TEXT("----Get Racers Speed Test----"));
+	UE_LOG(LogTemp, Warning, TEXT("Speed Array Length: %d"), SpeedArray.Num());*/
 	
 	//Loop through all Broadcasters
 	for (int i = 0; i < BrActorArray.Num(); i++)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Vehicle: %d"), i);
-		UE_LOG(LogTemp, Warning, TEXT("Speed: %d"), BrActorArray[i]->GetSpeed());
+		/*UE_LOG(LogTemp, Warning, TEXT("Vehicle: %d"), i);
+		UE_LOG(LogTemp, Warning, TEXT("Speed: %d"), BrActorArray[i]->GetSpeed());*/
 
 		//Gets Speed & Position
 		speed = BrActorArray[i]->GetSpeed();
