@@ -4,7 +4,9 @@
 #include "DRS_Reciever.h"
 #include "Misc/AutomationTest.h"
 
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(DRS_Reciever_Test, "DRS.Reciever.SimpleTest.IsTestingWorking", EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
+static const int TestFlags = (EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter);
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(DRS_Reciever_Test, "DRS.Reciever.SimpleTest.IsTestingWorking", TestFlags)
 
 bool DRS_Reciever_Test::RunTest(const FString& Parameters)
 {
