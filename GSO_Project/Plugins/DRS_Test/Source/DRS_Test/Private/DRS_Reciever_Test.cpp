@@ -1,12 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "DRS_Reciever_Test.h"
+#include "DRS_Reciever.h"
+#include "Misc/AutomationTest.h"
 
-DRS_Reciever_Test::DRS_Reciever_Test()
-{
-}
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(DRS_Reciever_Test, "DRS.Reciever.SimpleTest.IsTestingWorking", EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
 
-DRS_Reciever_Test::~DRS_Reciever_Test()
+bool DRS_Reciever_Test::RunTest(const FString& Parameters)
 {
+	return true;
 }

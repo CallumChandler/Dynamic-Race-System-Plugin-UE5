@@ -2,14 +2,14 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
-
-/**
- * 
- */
-class DRS_TEST_API DRS_Broadcaster_Test
-{
-public:
-	DRS_Broadcaster_Test();
-	~DRS_Broadcaster_Test();
-};
+//#include "CoreMinimal.h"
+//
+//
+///**
+// * 
+// */
+//class DRS_TEST_API DRS_Broadcaster_Test
+//{
+//public:
+//	bool RunTest(const FString& Parameters);
+//};
