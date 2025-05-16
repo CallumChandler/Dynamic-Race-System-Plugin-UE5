@@ -69,3 +69,11 @@ void UDRS_Reciever::ConnectToProcessorByName(FString ProcessorName)
 		}
 	}
 }
+
+//Test only functions
+#if UE_BUILD_TEST
+int UDRS_Reciever::Debug_GetRaceLevel()
+{
+	return RaceLevel;
+}
+#endif

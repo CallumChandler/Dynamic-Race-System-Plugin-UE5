@@ -69,6 +69,8 @@ void UDRS_Processor::UpdateAdaptiveComps()
 	}
 }
 
+
+
 TArray<int> UDRS_Processor::GetRacersSpeeds()
 {
 	//Makes and fills an Array accord to length of BrActorArray
@@ -134,8 +136,18 @@ int UDRS_Processor::ProduceRaceLevel(int val)
 	}
 }
 
+//Test Only Functions
+#if UE_BUILD_TEST
+bool UDRS_Processor::Debug_IsRecieverPresent(UDRS_Reciever* Rrc)
+{
+	return RActorArray.Contains(Rrc);
+}
 
-
+bool UDRS_Processor::Debug_IsBroadcasterPresent(UDRS_Broadcaster* Rrc)
+{
+	return BrActorArray.Contains(Rrc);
+}
+#endif
 
 
 

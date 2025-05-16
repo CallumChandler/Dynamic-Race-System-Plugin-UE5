@@ -58,4 +58,10 @@ public:
 	//Calls for the ACs to be updated, if they need to be
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void UpdateAdaptiveComps();
+
+	//Test Only Functions
+#if UE_BUILD_TEST
+	bool Debug_IsRecieverPresent(UDRS_Reciever* Rrc);
+	bool Debug_IsBroadcasterPresent(UDRS_Broadcaster* Brc);
+#endif
 };

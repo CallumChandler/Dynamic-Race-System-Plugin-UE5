@@ -3,6 +3,7 @@
 
 #include "DRS_Processor.h"
 #include "Misc/AutomationTest.h"
+#include "Tests/AutomationEditorCommon.h"
 #include "DRS_Reciever.h"
 #include "DRS_Broadcaster.h"
 
@@ -20,9 +21,9 @@ static const int TestFlagsP = (EAutomationTestFlags::EditorContext | EAutomation
 
 
 //-------Tests to be Run-------
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(DRS_Processor_Test, "DRS.Processor.SimpleTest.IsTestingWorking", TestFlagsP)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(Prc_Test_Work, "DRS.Processor.SimpleTest.IsTestingWorking", TestFlagsP)
 
-bool DRS_Processor_Test::RunTest(const FString& Parameters)
+bool Prc_Test_Work::RunTest(const FString& Parameters)
 {
 	return true;
 }
