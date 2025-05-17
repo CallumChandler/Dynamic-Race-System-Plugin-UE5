@@ -12,6 +12,24 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(Rrc_Test_Work, "DRS.Reciever.SimpleTest.0_IsTes
 
 bool Rrc_Test_Work::RunTest(const FString& Parameters)
 {
+#if UE_BUILD_TEST
+	UE_LOG(LogTemp, Warning, TEXT("Running on UE_BUILD_TEST"));
+#elif UE_BUILD_DEBUG
+	UE_LOG(LogTemp, Warning, TEXT("Running on UE_BUILD_DEBUG"));
+#elif UE_BUILD_SHIPPING
+	UE_LOG(LogTemp, Warning, TEXT("Running on UE_BUILD_TEST"));
+#elif UE_BUILD_DEVELOPMENT
+	UE_LOG(LogTemp, Warning, TEXT("Running on UE_BUILD_DEVELOPMENT"));
+#else
+	UE_LOG(LogTemp, Warning, TEXT("Not Running on Build"));
+#endif
+
+#if WITH_EDITOR
+	UE_LOG(LogTemp, Warning, TEXT("WITH_EDITOR"));
+#else
+	UE_LOG(LogTemp, Warning, TEXT("Not With Editor"));
+#endif
+
 	return true;
 }
 
@@ -84,7 +102,6 @@ bool Rrc_Test_ProcConnect::RunTest(const FString& Parameters)
 
 	//Result
 #if UE_BUILD_TEST
-	UE_LOG(LogTemp, Warning, TEXT("Running on UE_BUILD_TEST"));
 	TestTrue("Reciever wasn't Connected to Processor", Prc->Debug_IsRecieverPresent(Rrc));
 #endif
 
