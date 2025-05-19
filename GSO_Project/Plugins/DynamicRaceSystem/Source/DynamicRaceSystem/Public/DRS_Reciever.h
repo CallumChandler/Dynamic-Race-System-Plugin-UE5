@@ -56,9 +56,4 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void ConnectToProcessorByName(FString ProcessorName); //!!!TO BE TESTED!!!
 
-	//Test only functions
-#if UE_BUILD_TEST
-	int Debug_GetRaceLevel();
-#endif
-
 };
