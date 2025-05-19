@@ -77,9 +77,13 @@ bool Prc_Test_GetSpeeds::RunTest(const FString& Parameters)
 	//Init
 	UWorld* World = nullptr;
 	AActor* PrcActor = nullptr;
+	AActor* Brc1Actor = nullptr;
+	AActor* Brc2Actor = nullptr;
+
 	UPrc_Testing* Prc = nullptr;
 	UDRS_Broadcaster* Brc1 = nullptr;
 	UDRS_Broadcaster* Brc2 = nullptr;
+
 	TArray<int> TargetRaceSpeeds = { 30, 50 };
 	TArray<int> ResultingRaceSpeeds = { 0, 0 };
 
@@ -89,20 +93,22 @@ bool Prc_Test_GetSpeeds::RunTest(const FString& Parameters)
 	PrcActor->AddComponentByClass(UPrc_Testing::StaticClass(), false, FTransform::Identity, false);
 	Prc = PrcActor->GetComponentByClass<UPrc_Testing>();
 
-	PrcActor->AddComponentByClass(UDRS_Broadcaster::StaticClass(), false, FTransform::Identity, false);
-	Brc1 = PrcActor->GetComponentByClass<UDRS_Broadcaster>();
+	Brc1Actor = World->SpawnActor<AActor>();
+	Brc1Actor->AddComponentByClass(UDRS_Broadcaster::StaticClass(), false, FTransform::Identity, false);
+	Brc1 = Brc1Actor->GetComponentByClass<UDRS_Broadcaster>();
 	Prc->AddToBroadcasterArray(Brc1);
 
-	/*PrcActor->AddComponentByClass(UDRS_Broadcaster::StaticClass(), false, FTransform::Identity, false);
-	Brc2 = PrcActor->GetComponentByClass<UDRS_Broadcaster>();
-	Prc->AddToBroadcasterArray(Brc2);*/
+	Brc2Actor = World->SpawnActor<AActor>();
+	Brc2Actor->AddComponentByClass(UDRS_Broadcaster::StaticClass(), false, FTransform::Identity, false);
+	Brc2 = Brc2Actor->GetComponentByClass<UDRS_Broadcaster>();
+	Prc->AddToBroadcasterArray(Brc2);
 
 	//Sets Broadcaster Values
 	Brc1->SetSpeed(TargetRaceSpeeds[0]);
 	Brc1->SetPosition(1);
 
-	/*Brc2->SetSpeed(TargetRaceSpeeds[1]);
-	Brc2->SetPosition(2);*/
+	Brc2->SetSpeed(TargetRaceSpeeds[1]);
+	Brc2->SetPosition(2);
 
 	//Gets Array of values from the Processor
 	ResultingRaceSpeeds = Prc->Debug_GetRacersSpeeds();
