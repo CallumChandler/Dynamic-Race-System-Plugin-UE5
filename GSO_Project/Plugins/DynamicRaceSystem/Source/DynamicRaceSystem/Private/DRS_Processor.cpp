@@ -115,6 +115,106 @@ int UDRS_Processor::CalcMean(TArray<int> RaceSpeeds)
 	return value / RaceSpeeds.Num();
 }
 
+int UDRS_Processor::CalcForWeight(TArray<int> RaceSpeeds)
+{
+	int sum = 0;
+	int div = 0;
+
+	//Get the weighted results of Speed Array
+	for (int i = 0; i < RaceSpeeds.Num(); i++)
+	{
+		if (i <= 1) //If the first two Racers
+		{
+			sum += RaceSpeeds[i] * 8;
+			div += 8;
+		}
+		else
+		{
+			sum += RaceSpeeds[i];
+			div += 1;
+		}
+		
+	}
+
+	//Returns Sum / Div
+	return sum / div;
+}
+
+int UDRS_Processor::CalcExpForWeight(TArray<int> RaceSpeeds)
+{
+	int sum = 0;
+	int div = 0;
+
+	//Get the weighted results of Speed Array
+	for (int i = 0; i < RaceSpeeds.Num(); i++)
+	{
+		if (i <= 2) //If the first three Racers
+		{
+			sum += RaceSpeeds[i] * 8;
+			div += 8;
+		}
+		else
+		{
+			sum += RaceSpeeds[i];
+			div += 1;
+		}
+
+	}
+
+	//Returns Sum / Div
+	return sum / div;
+}
+
+int UDRS_Processor::CalcRearWeight(TArray<int> RaceSpeeds)
+{
+	int sum = 0;
+	int div = 0;
+
+	//Get the weighted results of Speed Array
+	for (int i = 0; i < RaceSpeeds.Num(); i++)
+	{
+		if (i >= RaceSpeeds.Num() - 2) //If the last two Racers
+		{
+			sum += RaceSpeeds[i] * 8;
+			div += 8;
+		}
+		else
+		{
+			sum += RaceSpeeds[i];
+			div += 1;
+		}
+
+	}
+
+	//Returns Sum / Div
+	return sum / div;
+}
+
+int UDRS_Processor::CalcExpRearWeight(TArray<int> RaceSpeeds)
+{
+	int sum = 0;
+	int div = 0;
+
+	//Get the weighted results of Speed Array
+	for (int i = 0; i < RaceSpeeds.Num(); i++)
+	{
+		if (i >= RaceSpeeds.Num() - 3) //If the last three Racers
+		{
+			sum += RaceSpeeds[i] * 8;
+			div += 8;
+		}
+		else
+		{
+			sum += RaceSpeeds[i];
+			div += 1;
+		}
+
+	}
+
+	//Returns Sum / Div
+	return sum / div;
+}
+
 int UDRS_Processor::ProduceRaceLevel(int val)
 {
 	//Returns value accordint to Bounds

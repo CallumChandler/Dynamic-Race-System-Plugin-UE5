@@ -33,6 +33,10 @@ protected:
 
 	//Formula Function/s, Calc gives the value and Produce turns it into the RaceLevel
 	static int CalcMean(TArray<int> RaceSpeeds);
+	static int CalcForWeight(TArray<int> RaceSpeeds);
+	static int CalcExpForWeight(TArray<int> RaceSpeeds);
+	static int CalcRearWeight(TArray<int> RaceSpeeds);
+	static int CalcExpRearWeight(TArray<int> RaceSpeeds);
 
 	int ProduceRaceLevel(int val);
 
