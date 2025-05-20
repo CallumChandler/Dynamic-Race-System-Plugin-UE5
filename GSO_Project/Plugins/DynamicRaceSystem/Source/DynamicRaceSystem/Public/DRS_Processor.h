@@ -8,7 +8,15 @@
 #include "DRS_Reciever.h"
 #include "DRS_Processor.generated.h"
 
-
+UENUM(BlueprintType)
+enum CalcType
+{
+	Mean,
+	ForwardWeight,
+	ExpandedForwardWeight,
+	RearWeight,
+	ExpandedRearWeight
+};
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class DYNAMICRACESYSTEM_API UDRS_Processor : public UActorComponent
@@ -60,5 +68,5 @@ public:
 
 	//Calls for the ACs to be updated, if they need to be
 	UFUNCTION(BlueprintCallable, Category = "DRS")
-	void UpdateAdaptiveComps();
+	void UpdateAdaptiveComps(CalcType CalcType);
 };

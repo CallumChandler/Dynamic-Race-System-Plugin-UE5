@@ -194,8 +194,8 @@ bool Prc_Test_UpdateAC::RunTest(const FString& Parameters)
 	Prc->AddToBroadcasterArray(Brc);
 
 	Brc->SetSpeed(180); //Which should make RL 3
-
-	Prc->UpdateAdaptiveComps(); //Updates Reciever
+	
+	Prc->UpdateAdaptiveComps(Mean); //Updates Reciever
 
 	//Result
 	TestTrue("Reciever not Updating", Rrc->Debug_GetRaceLevel() == 3);

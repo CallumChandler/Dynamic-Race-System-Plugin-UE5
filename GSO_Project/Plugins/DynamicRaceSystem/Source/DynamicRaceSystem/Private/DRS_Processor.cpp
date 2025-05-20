@@ -45,12 +45,41 @@ void UDRS_Processor::AddToBroadcasterArray(UDRS_Broadcaster* Broadcaster)
 	Broadcaster->SetPosition(BrActorArray.Num());
 }
 
-void UDRS_Processor::UpdateAdaptiveComps()
+void UDRS_Processor::UpdateAdaptiveComps(CalcType CalcType)
 {
 	if (!BrActorArray.IsEmpty()) //Check to ensure there are Brodcasters in the current Level
 	{
 		//Gets & converts Speed/s to a Level
-		int value = CalcMean(GetRacersSpeeds());
+		TArray<int> RaceSpeeds = GetRacersSpeeds();
+		int value;
+
+		switch (CalcType)
+		{
+		case Mean:
+			value = CalcMean(RaceSpeeds);
+			break;
+
+		case ForwardWeight:
+			value = CalcForWeight(RaceSpeeds);
+			break;
+
+		case ExpandedForwardWeight:
+			value = CalcExpForWeight(RaceSpeeds);
+			break;
+
+		case RearWeight:
+			value = CalcRearWeight(RaceSpeeds);
+			break;
+
+		case ExpandedRearWeight:
+			value = CalcExpRearWeight(RaceSpeeds);
+			break;
+
+		default:
+			value = CalcMean(RaceSpeeds);
+			break;
+		}
+
 		int TempLevel = ProduceRaceLevel(value);
 
 		//Updates RaceLevel if different
