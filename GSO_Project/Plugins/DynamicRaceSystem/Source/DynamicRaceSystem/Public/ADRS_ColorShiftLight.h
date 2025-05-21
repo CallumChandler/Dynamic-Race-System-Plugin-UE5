@@ -32,4 +32,7 @@ public:
 	//PointLight Reference
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Light")
 	UPointLightComponent* PointLight;
+
+	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category = "Light")
+	TArray<FLinearColor> ColorStates = { FLinearColor::Green, FLinearColor::Yellow, FLinearColor::Red };
 };

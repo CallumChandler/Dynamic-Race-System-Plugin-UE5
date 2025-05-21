@@ -14,7 +14,7 @@ AADRS_ColorShiftLight::AADRS_ColorShiftLight()
 	RecieverComponent = CreateDefaultSubobject<UDRS_Reciever>("Reciever");
 	PointLight = CreateDefaultSubobject<UPointLightComponent>("Light");
 
-	PointLight->SetLightColor(FLinearColor::White);
+	PointLight->SetLightColor(ColorStates[0]);
 	RootComponent = PointLight;
 }
 
@@ -36,19 +36,19 @@ void AADRS_ColorShiftLight::SetColor(int RaceLevel)
 	switch (RaceLevel)
 	{
 	case 1:
-		PointLight->SetLightColor(FLinearColor::Green);
+		PointLight->SetLightColor(ColorStates[0]);
 		break;
 
 	case 2:
-		PointLight->SetLightColor(FLinearColor::Yellow);
+		PointLight->SetLightColor(ColorStates[1]);
 		break;
 
 	case 3:
-		PointLight->SetLightColor(FLinearColor::Red);
+		PointLight->SetLightColor(ColorStates[2]);
 		break;
 
 	default:
-		PointLight->SetLightColor(FLinearColor::White);
+		PointLight->SetLightColor(ColorStates[0]);
 		break;
 	}
 }
