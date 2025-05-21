@@ -12,7 +12,7 @@ UDRS_Broadcaster::UDRS_Broadcaster()
 	RacerSpeed = 0;
 	RacerPosition = 1;
 
-	SetIsReplicated(true);
+	SetIsReplicatedByDefault(true);
 }
 
 void UDRS_Broadcaster::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -49,7 +49,7 @@ void UDRS_Broadcaster::SetSpeed(int speed)
 
 void UDRS_Broadcaster::SetPosition(int position)
 {
-	RacerPosition = FMath::Clamp(position, 0, 999);
+	RacerPosition = FMath::Clamp(position, 1, 999);
 }
 
 int UDRS_Broadcaster::GetSpeed()

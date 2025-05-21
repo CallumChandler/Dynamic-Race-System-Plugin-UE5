@@ -34,5 +34,8 @@
 			"Name": "FunctionalTestingEditor",
 			"Enabled": true
 		}
+	],
+	"TargetPlatforms": [
+		"Windows"
 	]
 }

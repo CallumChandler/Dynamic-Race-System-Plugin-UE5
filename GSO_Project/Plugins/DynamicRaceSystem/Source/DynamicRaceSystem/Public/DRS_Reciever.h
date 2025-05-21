@@ -29,7 +29,7 @@ public:
 protected:
 	//RaceLevel Value
 	UPROPERTY(ReplicatedUsing = OnRep_RaceLevel)
-	int RaceLevel;
+	int RaceLevel = 0;
 	
 	//When RaceLevel changes this is run on all systems
 	UFUNCTION()

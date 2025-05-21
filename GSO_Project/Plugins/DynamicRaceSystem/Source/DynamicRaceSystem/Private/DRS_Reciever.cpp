@@ -7,9 +7,8 @@
 UDRS_Reciever::UDRS_Reciever()
 {
 	PrimaryComponentTick.bCanEverTick = false;
-	SetIsReplicated(true);
+	SetIsReplicatedByDefault(true);
 
-	RaceLevel = 0;
 	OnRaceLevelChange.AddDynamic(this, &UDRS_Reciever::OnRaceSpeedChange);
 }
 
