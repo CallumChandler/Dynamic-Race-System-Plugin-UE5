@@ -18,11 +18,15 @@ public:
 	//----Functions for Testing----
 	bool Debug_IsRecieverPresent(UDRS_Reciever* Rrc);
 	bool Debug_IsBroadcasterPresent(UDRS_Broadcaster* Brc);
-	
+
 	//Gets Racers Speeds for Testing
 	TArray<int> Debug_GetRacersSpeeds() { return GetRacersSpeeds(); }
 
 	int Debug_CalcMean(TArray<int> RaceSpeeds) { return CalcMean(RaceSpeeds); }
+	int Debug_CalcForWeight(TArray<int> RaceSpeeds) { return CalcForWeight(RaceSpeeds); } 
+	int Debug_CalcExpForWeight(TArray<int> RaceSpeeds) { return CalcExpForWeight(RaceSpeeds); }
+	int Debug_CalcRearWeight(TArray<int> RaceSpeeds) { return CalcRearWeight(RaceSpeeds); }
+	int Debug_CalcExpRearWeight(TArray<int> RaceSpeeds) { return CalcExpRearWeight(RaceSpeeds); }
 
 	int Debug_ProduceRaceLevel(int val) { return ProduceRaceLevel(val); }
 };

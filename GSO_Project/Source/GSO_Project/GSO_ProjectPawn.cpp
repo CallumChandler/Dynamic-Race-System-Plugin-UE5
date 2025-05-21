@@ -204,4 +204,21 @@ void AGSO_ProjectPawn::ResetVehicle(const FInputActionValue& Value)
 	UE_LOG(LogTemplateVehicle, Error, TEXT("Reset Vehicle"));
 }
 
+void AGSO_ProjectPawn::CallCreateLobby()
+{
+	UWorld* World = GetWorld();
+	{
+		World->ServerTravel("/Game/TestLevel/TestLevel?listen");
+	}
+}
+
+void AGSO_ProjectPawn::CallClientTravel(const FString& Address)
+{
+	APlayerController* PC = GetGameInstance()->GetFirstLocalPlayerController();
+	if (PC)
+	{
+		PC->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
+	}
+}
+
 #undef LOCTEXT_NAMESPACE

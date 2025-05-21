@@ -202,3 +202,95 @@ bool Prc_Test_UpdateAC::RunTest(const FString& Parameters)
 
 	return true;
 }
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(Prc_Test_FCalc, "DRS.Processor.SimpleTest.7_TestForCalc", TestFlagsP)
+
+bool Prc_Test_FCalc::RunTest(const FString& Parameters)
+{
+	//Init
+	UWorld* World = nullptr;
+	AActor* PrcActor = nullptr;
+	UPrc_Testing* Prc = nullptr;
+
+	TArray<int> TestValues = { 10, 20, 30, 40 }; //Should produce 17
+
+	//Act
+	World = FAutomationEditorCommonUtils::CreateNewMap();
+	PrcActor = World->SpawnActor<AActor>();
+	PrcActor->AddComponentByClass(UPrc_Testing::StaticClass(), false, FTransform::Identity, false);
+	Prc = PrcActor->GetComponentByClass<UPrc_Testing>();
+
+	//Result
+	TestTrue("Forward Calc incorrect result", Prc->Debug_CalcForWeight(TestValues) == 17);
+
+	return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(Prc_Test_EFCalc, "DRS.Processor.SimpleTest.8_TestExpForCalc", TestFlagsP)
+
+bool Prc_Test_EFCalc::RunTest(const FString& Parameters)
+{
+	//Init
+	UWorld* World = nullptr;
+	AActor* PrcActor = nullptr;
+	UPrc_Testing* Prc = nullptr;
+
+	TArray<int> TestValues = { 10, 20, 30, 40 }; //Should produce 20
+
+	//Act
+	World = FAutomationEditorCommonUtils::CreateNewMap();
+	PrcActor = World->SpawnActor<AActor>();
+	PrcActor->AddComponentByClass(UPrc_Testing::StaticClass(), false, FTransform::Identity, false);
+	Prc = PrcActor->GetComponentByClass<UPrc_Testing>();
+
+	//Result
+	TestTrue("Expanded Forward Calc incorrect result", Prc->Debug_CalcExpForWeight(TestValues) == 20);
+
+	return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(Prc_Test_RCalc, "DRS.Processor.SimpleTest.8_TestRearCalc", TestFlagsP)
+
+bool Prc_Test_RCalc::RunTest(const FString& Parameters)
+{
+	//Init
+	UWorld* World = nullptr;
+	AActor* PrcActor = nullptr;
+	UPrc_Testing* Prc = nullptr;
+
+	TArray<int> TestValues = { 10, 20, 30, 40 }; //Should produce 32
+
+	//Act
+	World = FAutomationEditorCommonUtils::CreateNewMap();
+	PrcActor = World->SpawnActor<AActor>();
+	PrcActor->AddComponentByClass(UPrc_Testing::StaticClass(), false, FTransform::Identity, false);
+	Prc = PrcActor->GetComponentByClass<UPrc_Testing>();
+
+	//Result
+	TestTrue("Rear Calc incorrect result", Prc->Debug_CalcRearWeight(TestValues) == 32);
+
+	return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(Prc_Test_ERCalc, "DRS.Processor.SimpleTest.9_TestRearCalc", TestFlagsP)
+
+bool Prc_Test_ERCalc::RunTest(const FString& Parameters)
+{
+	//Init
+	UWorld* World = nullptr;
+	AActor* PrcActor = nullptr;
+	UPrc_Testing* Prc = nullptr;
+
+	TArray<int> TestValues = { 10, 20, 30, 40 }; //Should produce 29
+
+	//Act
+	World = FAutomationEditorCommonUtils::CreateNewMap();
+	PrcActor = World->SpawnActor<AActor>();
+	PrcActor->AddComponentByClass(UPrc_Testing::StaticClass(), false, FTransform::Identity, false);
+	Prc = PrcActor->GetComponentByClass<UPrc_Testing>();
+
+	//Result
+	TestTrue("Expanded Rear Calc incorrect result", Prc->Debug_CalcExpRearWeight(TestValues) == 29);
+
+	return true;
+}
