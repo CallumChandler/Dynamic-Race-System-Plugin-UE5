@@ -52,6 +52,12 @@ void UDRS_Broadcaster::SetPosition(int position)
 	RacerPosition = FMath::Clamp(position, 1, 999);
 }
 
+void UDRS_Broadcaster::SetSpeedAndPosition(int speed, int position)
+{
+	RacerSpeed = FMath::Clamp(speed, 0, 999);
+	RacerPosition = FMath::Clamp(position, 1, 999);
+}
+
 int UDRS_Broadcaster::GetSpeed()
 {
 	return RacerSpeed;

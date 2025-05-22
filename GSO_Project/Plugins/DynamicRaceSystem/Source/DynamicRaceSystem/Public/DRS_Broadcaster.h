@@ -37,16 +37,15 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "DRS")
 	void SetSpeed(int speed);
 
+	void SetPosition(int position);
+	
 	//Set Position for DRS
 	UFUNCTION(BlueprintCallable, Category = "DRS")
-	void SetPosition(int position);
+	void SetSpeedAndPosition(int speed, int position);
 
-	//Get Speed for DRS
-	UFUNCTION(BlueprintCallable, Category = "DRS")
+
+	//Get Speed and Position for DRS
 	int GetSpeed();
-	
-	//Get Position for DRS
-	UFUNCTION(BlueprintCallable, Category = "DRS")
 	int GetPosition();
 
 };

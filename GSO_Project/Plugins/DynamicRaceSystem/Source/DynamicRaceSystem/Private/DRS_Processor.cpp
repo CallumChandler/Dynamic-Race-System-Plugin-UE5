@@ -41,7 +41,7 @@ void UDRS_Processor::AddToBroadcasterArray(UDRS_Broadcaster* Broadcaster)
 		BrActorArray.Add(Broadcaster);
 	}
 	
-	//!!!FOR TESTING PURPOSES!!!, Sets position for Broadcasters
+	//Sets Defaault position for Broadcasters in order spawned
 	Broadcaster->SetPosition(BrActorArray.Num());
 }
 
