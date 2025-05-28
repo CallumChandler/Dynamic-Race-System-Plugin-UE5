@@ -59,8 +59,9 @@ public:
 	//Adds a Reciever to the according array
 	void AddToRecieverArray(UDRS_Reciever* Reciever);
 
-	//Adds a Broadcaster to the according array
+	//Adds/Removes a Broadcaster to the according array
 	void AddToBroadcasterArray(UDRS_Broadcaster* Broadcaster);
+	void RemoveFromBroadcasterArray(UDRS_Broadcaster* Broadcaster);
 
 	//Overall 'Level' of the Racers (1->3)
 	UPROPERTY(BlueprintReadOnly, Category = "DRS");

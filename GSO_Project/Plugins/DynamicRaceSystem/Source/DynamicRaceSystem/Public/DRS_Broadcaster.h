@@ -19,10 +19,13 @@ public:
 
 	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
+private:
+	//When removed from level
+	virtual void BeginDestroy() override;
+
 protected:
 	void BeginPlay();
 
-protected:
 	//Broadcaster Values
 	UPROPERTY(Replicated)
 	int RacerSpeed;

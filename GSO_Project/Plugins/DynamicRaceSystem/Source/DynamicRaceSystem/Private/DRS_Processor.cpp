@@ -45,6 +45,17 @@ void UDRS_Processor::AddToBroadcasterArray(UDRS_Broadcaster* Broadcaster)
 	Broadcaster->SetPosition(BrActorArray.Num());
 }
 
+void UDRS_Processor::RemoveFromBroadcasterArray(UDRS_Broadcaster* Broadcaster)
+{
+	//If it does contain it then remove it
+	if (BrActorArray.Contains(Broadcaster))
+	{
+		int Removed = BrActorArray.Remove(Broadcaster);
+
+		UE_LOG(LogTemp, Warning, TEXT("%i Broadcasters Removed"), Removed)
+	}
+}
+
 void UDRS_Processor::UpdateAdaptiveComps(CalcType CalcType)
 {
 	if (!BrActorArray.IsEmpty()) //Check to ensure there are Brodcasters in the current Level

@@ -42,6 +42,22 @@ void UDRS_Broadcaster::BeginPlay()
 	}
 }
 
+void UDRS_Broadcaster::BeginDestroy()
+{
+	if (GetOwnerRole() == ROLE_Authority) //Ensures the connection is made on the Server
+	{
+		//Gets all active the Processor/s and removes this Broadcaster to them
+		for (TObjectIterator<UDRS_Processor> prc; prc; ++prc)
+		{
+			//If component is in current level
+			if (prc->ComponentIsInLevel(GetWorld()->GetCurrentLevel()))
+			{
+				prc->RemoveFromBroadcasterArray(this);
+			}
+		}
+	}
+}
+
 void UDRS_Broadcaster::SetSpeed(int speed)
 {
 	RacerSpeed = FMath::Clamp(speed, 0, 999);
