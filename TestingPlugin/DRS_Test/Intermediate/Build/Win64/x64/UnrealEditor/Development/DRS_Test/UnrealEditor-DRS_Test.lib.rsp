@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-DRS_Test.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Intermediate\Build\Win64\x64\GSO_ProjectEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
+"D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Plugins\DRS_Test\Intermediate\Build\Win64\x64\UnrealEditor\Development\DRS_Test\Module.DRS_Test.cpp.obj"
+"D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Plugins\DRS_Test\Intermediate\Build\Win64\x64\UnrealEditor\Development\DRS_Test\Default.rc2.res"
+/OUT:"D:\0-FinalYearProject\Project\GearShiftOverdrive\GSO_Project\Plugins\DRS_Test\Intermediate\Build\Win64\x64\UnrealEditor\Development\DRS_Test\UnrealEditor-DRS_Test.lib"

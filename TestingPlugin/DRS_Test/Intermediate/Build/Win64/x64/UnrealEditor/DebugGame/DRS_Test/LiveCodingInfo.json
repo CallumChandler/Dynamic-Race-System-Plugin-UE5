@@ -1,0 +1,11 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.DRS_Test.cpp.obj": [
+			"DRS_Broadcaster_Test.cpp.obj",
+			"DRS_Processor_Test.cpp.obj",
+			"DRS_Test.cpp.obj",
+			"DRS_Reciever_Test.cpp.obj"
+		]
+	}
+}

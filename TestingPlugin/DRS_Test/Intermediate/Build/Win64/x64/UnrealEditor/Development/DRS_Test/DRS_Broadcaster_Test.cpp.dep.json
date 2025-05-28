@@ -1,0 +1,20 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\private\\drs_broadcaster_test.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\intermediate\\build\\win64\\x64\\gso_projecteditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
+        "Includes": [
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\drs_test\\definitions.drs_test.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\source\\dynamicracesystem\\public\\drs_broadcaster.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\public\\net\\unrealnetwork.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\net\\core\\public\\net\\core\\propertyconditions\\propertyconditions.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\unrealeditor\\inc\\dynamicracesystem\\uht\\drs_broadcaster.generated.h",
+            "d:\\ue_5.3\\engine\\source\\editor\\unrealed\\public\\tests\\automationeditorcommon.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\tests\\automationtestsettings.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\automationtestsettings.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

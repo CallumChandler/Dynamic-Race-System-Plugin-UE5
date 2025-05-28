@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\drs_test\\singlefile\\drs_broadcaster_test.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\drs_test\\definitions.drs_test.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\intermediate\\build\\win64\\x64\\gso_projecteditor\\development\\engine\\shareddefinitions.engine.cpp20.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\public\\drs_broadcaster_test.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

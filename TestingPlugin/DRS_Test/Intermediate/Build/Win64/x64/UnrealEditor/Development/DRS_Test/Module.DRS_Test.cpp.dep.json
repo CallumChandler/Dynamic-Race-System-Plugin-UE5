@@ -1,0 +1,40 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\drs_test\\module.drs_test.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\intermediate\\build\\win64\\x64\\gso_projecteditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
+        "Includes": [
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\drs_test\\definitions.drs_test.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\intermediate\\build\\win64\\unrealeditor\\inc\\drs_test\\uht\\drs_test.init.gen.cpp",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\intermediate\\build\\win64\\unrealeditor\\inc\\drs_test\\uht\\prc_testing.gen.cpp",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\public\\prc_testing.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\source\\dynamicracesystem\\public\\drs_processor.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\source\\dynamicracesystem\\public\\drs_broadcaster.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\public\\net\\unrealnetwork.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\net\\core\\public\\net\\core\\propertyconditions\\propertyconditions.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\unrealeditor\\inc\\dynamicracesystem\\uht\\drs_broadcaster.generated.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\source\\dynamicracesystem\\public\\drs_reciever.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\playerstate.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\playerstate.generated.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\unrealeditor\\inc\\dynamicracesystem\\uht\\drs_reciever.generated.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\dynamicracesystem\\intermediate\\build\\win64\\unrealeditor\\inc\\dynamicracesystem\\uht\\drs_processor.generated.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\intermediate\\build\\win64\\unrealeditor\\inc\\drs_test\\uht\\prc_testing.generated.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\intermediate\\build\\win64\\unrealeditor\\inc\\drs_test\\uht\\rrc_testing.gen.cpp",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\public\\rrc_testing.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\intermediate\\build\\win64\\unrealeditor\\inc\\drs_test\\uht\\rrc_testing.generated.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\private\\drs_broadcaster_test.cpp",
+            "d:\\ue_5.3\\engine\\source\\editor\\unrealed\\public\\tests\\automationeditorcommon.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\tests\\automationtestsettings.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\automationtestsettings.generated.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\private\\drs_processor_test.cpp",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\private\\drs_reciever_test.cpp",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\private\\drs_test.cpp",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\public\\drs_test.h",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\private\\prc_testing.cpp",
+            "d:\\0-finalyearproject\\project\\gearshiftoverdrive\\gso_project\\plugins\\drs_test\\source\\drs_test\\private\\rrc_testing.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
