@@ -56,6 +56,8 @@ void UDRS_Broadcaster::BeginDestroy()
 			}
 		}
 	}
+
+	Super::BeginDestroy();
 }
 
 void UDRS_Broadcaster::SetSpeed(int speed)
