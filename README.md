@@ -93,7 +93,7 @@ The Broadcaster's with priority will have the most influence over the final Race
 
 -----Known Issues-----
 
--V0.04: None.
+-V0.04: Various screens can cause Menu to be partially hidden, when joining Multiplayer rarely you will end up stuck in floor, and when racer leaves Multiplayer server the server crashes.
 
 -V0.03: No Multiplayer, gap at leftmost wall.
 
