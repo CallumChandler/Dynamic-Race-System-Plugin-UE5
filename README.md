@@ -22,13 +22,15 @@
 
 ---Controls---
 
-W or Space -> Accelerate
+W -> Accelerate
 
 A/D -> Turn Left/Right Respectively
 
 S -> Reverse
 
-Mouse -> Move to look
+Space -> Brake
+
+Mouse -> Hold Left Key to look around
 
 Tab -> Menu
 
