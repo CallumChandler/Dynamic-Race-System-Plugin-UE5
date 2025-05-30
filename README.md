@@ -95,7 +95,7 @@ The Broadcaster's with priority will have the most influence over the final Race
 
 -----Known Issues-----
 
--V0.05: When joining Multiplayer you might get stuck in the floor, Elevator may cause you to get stuck.
+-V0.05: When joining Multiplayer you might get stuck in the floor, car in Test Level can get stuck on Elevator edge.
 
 -V0.04: Various screens can cause Menu to be partially hidden, when joining Multiplayer rarely you will end up stuck in floor, and when racer leaves Multiplayer server the server crashes.
 
