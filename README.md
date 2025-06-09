@@ -2,8 +2,6 @@
 
 --------------==For the Test Level==--------------
 
-[![Test Level Demo](https://img.youtube.com/vi/1WnSBZAP0M4/0.jpg)](https://www.youtube.com/watch?1WnSBZAP0M4)
-
 --Install & Launch (Windows)--
 
 1-Download the latest [TestLevel.zip] from Releases.
